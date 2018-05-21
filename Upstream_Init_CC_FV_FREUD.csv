@@ -1,0 +1,5 @@
+name,type,DScp,measure,beta,uparam
+17311,link,ORIFICE33@17312-17313,depth,10,1
+2999,storage,PUMP38@2999-5007,depth,10,1
+5220,storage,PUMP44@5220-5219,depth,10,1
+5010,storage,PUMP34@5010-5009,depth,10,1

@@ -1,0 +1,12 @@
+something.p,ISD010_DOWN,10,1,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1,15.5,28,0
+something.p,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0
+simple.p,FirstHamilton_pruned_noUP.inp,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,2 day pruned
+simple_noControl.p,FirstHamilton_pruned_noUP.inp,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,"2 day pruned, No Control"
+simple_noControl.p,FirstHamilton_pruned_noUP.inp,False,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,"2 day pruned, No Control"
+simple_noControl.p,FirstHamilton_pruned_noUP.inp,False,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,"2 day pruned, No Control"
+simple_Control.p,FirstHamilton_pruned_noUP.inp,True,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,"2 day pruned, No Control"
+simple_Control_cascade.p,FirstHamilton_pruned_noUP.inp,True,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,2-day with cascading Qout per dam
+simple_Control_cascade.p,FirstHamilton_pruned_noUP.inp,True,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,2-day with cascading Qout per dam
+simple_Control.p,FirstHamilton_pruned_noUP.inp,True,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,"2 day pruned, No Control"
+simple_Control_withPerformance.p,FirstHamilton_pruned_noUP.inp,True,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,"2 day pruned, No Control"
+simple_NoControl_withPerformance.p,FirstHamilton_pruned_noUP.inp,False,ISD010_DOWN,10,1.0,ISD009_DOWN,10,0.1,ISD008_DOWN,10,0.1,ISD007_DOWN,10,0.1,ISD006_DOWN,10,0.1,21450,10,0,1.0,15.5,28,0,"2 day pruned, No Control"

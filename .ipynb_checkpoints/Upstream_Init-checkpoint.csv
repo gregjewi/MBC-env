@@ -1,0 +1,6 @@
+name,type,DScp,measure,beta,uparam
+2220,link,ISD010_DOWN,depth,10,1
+2198,link,ISD009_DOWN,depth,10,0.1
+2190,link,ISD008_DOWN,depth,10,0.1
+2180,link,ISD007_DOWN,depth,10,0.1
+2150,link,ISD006_DOWN,depth,10,0.1
