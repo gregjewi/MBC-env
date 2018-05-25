@@ -1,1 +1,11 @@
 testing_CC_FV_FREUD.p,GDRSS_25YR24HR.inp,True,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1.0,9.0,215,0,"GDRSS 25yr 24hr, CC FV FREUD"
+orifice_qaqc.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1.0,9.0,215,0,qa qc orifice equations
+orifice_qaqc_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1.0,9.0,215,0,"qa qc orifice equations, 30 min timestep"
+orifice_qaqc_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1.0,9.0,215,0,"qa qc orifice equations, 30 min timestep"
+orifice_qaqc_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1.0,34.0,20,0,"qa qc orifice equations, 30 min timestep"
+orifice_qaqc_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1.0,34.0,20,0,"qa qc orifice equations, 30 min timestep"
+orifice_qaqc_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1.0,34.0,20,0,"qa qc orifice equations, 900 sec time step"
+orifice_qaqc_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1.0,34.0,20,0,"equal weights, 900 sec time step"
+orifice_qaqc_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1.0,34.0,20,0,"equal weights, 900 sec time step"
+orifice_qaqc_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1.0,34.0,10,0,"lower weight on forebay, 900 sec time step"
+orifice_qaqc_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1.0,34.0,5,0,"setpoint 5 lower weight on forebay, 900 sec time step"

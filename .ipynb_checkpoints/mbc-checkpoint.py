@@ -4,8 +4,9 @@ import pandas as pd
 import pickle
 import csv
 import matplotlib.pyplot as plt
+import winsound
 
-def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes):
+def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes,timestep,units):
     # These currently don't change per timestep. That is a possibility though
     setpts = np.array([downstreamDict[dsKeys[0]]['set_point'],downstreamDict[dsKeys[0]]['set_derivative']])
     dparam = [downstreamDict[dsKeys[0]]['epsilon'],downstreamDict[dsKeys[0]]['gamma']]
@@ -13,10 +14,20 @@ def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes
     n_tanks = len(upstreamDict)
     
     ustream = np.array([upstreamDict[i]['ts'][-1] for i in upstreamDict])
-    try:
-        dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],downstreamDict[dsKeys[0]]['ts_flow'][-1]-downstreamDict[dsKeys[0]]['ts_flow'][-2]])
-    except:
-        dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],0])
+    
+    # if downstream set point is flow
+    if downstreamDict[dsKeys[0]] == 'link':
+        try:
+            dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],downstreamDict[dsKeys[0]]['ts_flow'][-1]-downstreamDict[dsKeys[0]]['ts_flow'][-2]])
+        except:
+            dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],0])
+
+    # else downstream set point in depth/storage... need to change if make DS setpoint an outfall.
+    else:
+        try:
+            dstream = np.array([downstreamDict[dsKeys[0]]['ts_depth'][-1],downstreamDict[dsKeys[0]]['ts_depth'][-1]-downstreamDict[dsKeys[0]]['ts_depth'][-2]])
+        except:
+            dstream = np.array([downstreamDict[dsKeys[0]]['ts_depth'][-1],0])
     
     # Set pareto optimal price
     p = (sum(uparam*ustream) + sum(dparam*(dstream-setpts)))/(1 + n_tanks)
@@ -38,19 +49,27 @@ def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes
         if PS == 0:
             controlDict[j]['q_goal'] = 0
         else:
-            # have not implemented cascasding summation.
-            controlDict[j]['q_goal'] = upstreamDict[i]['PD'][-1]/PS*setpts[0]*downstreamDict[dsKeys[0]]['max_flow'] # setpts[0] assumed to be downstream flow setpoint
+            if downstreamDict[dsKeys[0]]['type'] == 'link':
+                # have not implemented cascasding summation for ISDs in series, etc.
+                controlDict[j]['q_goal'] = upstreamDict[i]['PD'][-1]/PS*setpts[0]*downstreamDict[dsKeys[0]]['max_flow'] # setpts[0] assumed to be downstream flow/depth setpoint
+            elif downstreamDict[dsKeys[0]]['type'] == 'storage':
+                controlDict[j]['q_goal'] = upstreamDict[i]['PD'][-1]*downstreamDict[dsKeys[0]]['total_storage']/timestep
+            elif downstreamDict[dsKeys[0]]['type'] == 'outfall':
+                # do something here
+                pass
+            else:
+                pass
         
         if upstreamDict[i]['ts'][-1] == 0:
             controlDict[j]['action'] = 0.0 #Keep orifice closed
         else:
             # Send dictionary of control points. "Output" is changing the 'action', meaning target_setting.
-            get_target_setting(controlDict,nodes)
+            get_target_setting(controlDict,nodes, units)
     
     price.append(p)
     PDemand.append(PD)
 
-def get_target_setting(controlDict, nodes):
+def get_target_setting(controlDict, nodes, units):
     # do something to calculate target setting for each orifice/pump
     # Assign target_setting as 'action' in each control point dict
     
@@ -60,9 +79,18 @@ def get_target_setting(controlDict, nodes):
     #   - Depth of water in downstream node (h2)
     #   - Current weir setting (before changing the setting)
     #   - Orifice Geometries
+
+    # Pumps:
+    # So far only pumps using type 3 pump curves have been assimilated into
+    # the program. TBD on the others.
     
-    g = 32.2 # gravity
+    # units should be a global variable.
+    if units == 'US':
+        g = 32.2 # gravity
+    else:
+        g = 9.81 # gravity
     
+
     for i in controlDict:
         control_connects = controlDict[i]['pyswmmVar'].connections
         upstream = nodes[control_connects[0]]
@@ -70,45 +98,80 @@ def get_target_setting(controlDict, nodes):
 
         h1 = upstream.depth + upstream.invert_elevation
         h2 = downstream.depth + downstream.invert_elevation
-        current_setting = controlDict[i]['pyswmmVar'].current_setting
+        
+        current_setting = controlDict[i]['pyswmmVar'].current_setting # current_setting == hcrown
 
-        if controlDict[i]['type'] == 'SIDE': # means side orifice
-            if controlDict[i]['shape'] == 'RECT_CLOSED':
-                current_height = current_setting * controlDict[i]['geom1']
-                h_midpt = (current_height / 2) + (upstream.invert_elevation + downstream.invert_elevation) / 2
-
-                if h2 < h_midpt:
-                    H = h1 - h_midpt
-                    y = controlDict[i]['q_goal'] / (controlDict[i]['Cd'] * np.sqrt(2*g) * controlDict[i]['geom1'] * controlDict[i]['geom2'])
-
-                    answer = np.roots([controlDict[i]['geom1']/2,h1 - upstream.invert_elevation,0,-y**2])
-                    for number in answer:
-                        if np.real(number) < 1.0 and np.real(number) > 0.0:
-                            controlDict[i]['action'] = np.real(number)
-
-                    # This took too long... switched to root finder above from numpy
-                    # x = Symbol('x')
-                    # answer = solve(controlDict[i]['geom1']/2 * x**3 + h1 * x**2 - y**2)
-                    # for number in answer:
-                    #     if sympy.functions.re(number) > 0.0 and sympy.functions.re(number) < 1.0:
-                    #         controlDict[i]['action'] = sympy.functions.re(number)
-
-                else:
-                    H = h1 - h2
-                    # print(H)
-                    # if H is close to zero, don't change the target setting.
-                    if np.allclose(0.0,H,atol=1e-04) or H < 0.0:
-                        controlDict[i]['action'] = current_setting
-                    else:
-                        target_setting = controlDict[i]['q_goal'] / (controlDict[i]['Cd'] * np.sqrt(2 * g * H) * controlDict[i]['geom1'] * controlDict[i]['geom2'])
-                        controlDict[i]['action'] = target_setting
+        pump = False
+        if controlDict[i]['type'] == 'pump':
+            pump = True
             
-            elif controlDict[i]['shape'] == 'CIRCULAR':
-                # do something here to calculate target setting for circular orifice
-                pass
 
-        elif controlDict[i]['type'] == 'pump':
-            if controlDict[i]['curve_info']['type'] == 'PUMP3':
+        if not pump:
+            # Orifice Stuff
+            
+            current_height = current_setting * controlDict[i]['geom1'] # current_height == hcrown
+            h_midpt = (current_height / 2) + (upstream.invert_elevation + downstream.invert_elevation) / 2
+            hcrest = upstream.invert_elevation + controlDict[i]['offset']
+            
+            # inlet submergence
+            if h1 < current_height:
+                f = (h1 - hcrest) / (current_height - hcrest) # weir equation
+            else:
+                f = 1.0 # submerged.
+    
+            # which head to use
+            if f < 1.0:
+                H = h1 - hcrest
+            elif h2 < h_midpt:
+                complicated = True
+                H = h1 - h_midpt
+            else:
+                complicated = False
+                H = h1 - h2
+            
+            # USE CALCULATED HEAD AND DESIRED FLOW TO DETERMINE GATE OPENING ACTION
+            
+            # no head at orifice
+            if H < 0.1 or f <= 0.0:
+                controlDict[i]['action'] = 0.0
+                # print('Head too small')
+            elif h2 > h1:
+                controlDict[i]['action'] = 0.0
+                print('Backward flow condition, orifice closed')
+            
+            # Weir Flow
+            elif (f < 1.0 and H > 0.1):
+                A_open = controlDict[i]['q_goal'] / ( controlDict[i]['Cd'] * np.sqrt(2*g*H) * (2.0/3.0) )
+                
+                if controlDict[i]['shape'] == 'CIRCULAR':
+                    print("Circular does not work yet. Action = 0.0")
+                    controlDict[i]['action'] = 0.0
+                else:
+                    A_ratio = A_open / ( controlDict[i]['geom1'] * controlDict[i]['geom2'] )
+                    controlDict[i]['action'] = A_ratio
+            
+            # True orifice flow
+            else:
+                # since q = Cd * A_open * sqrt( 2 g H )
+                A_open = controlDict[i]['q_goal'] / ( controlDict[i]['Cd'] * np.sqrt(2*g*H) )
+                
+                if controlDict[i]['shape'] == 'CIRCULAR':
+                    print("Circular does not work yet. Action = 0.0")
+                    controlDict[i]['action'] = 0.0
+                else:
+                    A_ratio = A_open / ( controlDict[i]['geom1'] * controlDict[i]['geom2'] )
+                    controlDict[i]['action'] = A_ratio
+                    
+    
+        # Pump is true
+        else:
+            if controlDict[i]['curve_info']['type'] == 'PUMP1':
+                print(i, 'Pump type 1...')
+
+            elif controlDict[i]['curve_info']['type'] == 'PUMP2':
+                print(i, 'Pump type 2...')
+
+            elif controlDict[i]['curve_info']['type'] == 'PUMP3':
                 head = h2 - h1 # pump pushes water from low head (h1) to higher head (h2)
 
                 # calculate q_full at given head.
@@ -123,48 +186,49 @@ def get_target_setting(controlDict, nodes):
                 else:
                     controlDict[i]['action'] = q_full / controlDict[i]['q_goal']
 
-        else:
-            # do something here with the other orifice and pumps
-            pass
+            elif controlDict[i]['curve_info']['type'] == 'PUMP4':
+                print(i, 'Pump type 4...')
+        
         
         # if target setting greater than 1, only open to 1.
-        controlDict[i]['action'] = min(controlDict[i]['action'], 1.0)
-        # controlDict[i]['action'] = np.random.random() # See if it actually works...
+        controlDict[i]['action'] = min(max(controlDict[i]['action'],0.0),1.0)
 
-def fnctn(ustream, dstream, setpts, uparam, dparam, n_tanks, action,max_flow,controlDict):
-    p = (sum(uparam*ustream) + sum(dparam*(dstream-setpts)))/(1 + n_tanks)
-    PD = np.zeros(n_tanks)
-    for i in range(0,n_tanks):
-        PD[i] = max(-p + uparam[i]*ustream[i],0)
-    PS = sum(PD)
+
+# def fnctn(ustream, dstream, setpts, uparam, dparam, n_tanks, action,max_flow,controlDict):
+#     p = (sum(uparam*ustream) + sum(dparam*(dstream-setpts)))/(1 + n_tanks)
+#     PD = np.zeros(n_tanks)
+#     for i in range(0,n_tanks):
+#         PD[i] = max(-p + uparam[i]*ustream[i],0)
+#     PS = sum(PD)
     
-    for i in range(0,n_tanks):
-        if PS == 0:
-            Qi = 0
-        else:
-            # Qi = PD[i]/PS*setpts[0] # setpts[0] assumed to be downstream flow setpoint
-            Qi = sum(PD[0:i+1])/PS*setpts[0]*max_flow # setpts[0] assumed to be downstream flow setpoint
-        if ustream[i] == 0:
-            action[i] = 0.5
-        else:
-            h2i = Qi/(1.0*1*np.sqrt(2*9.81*ustream[i]))
-#             h2i = Qi/(0.61*1*np.sqrt(2*9.81*ustream[i]))
-            action[i] = max(min(h2i/2,1.0),0.0)
-#         if ustream[i] > 0.95:
-#             action[i] = 1.0
+#     for i in range(0,n_tanks):
+#         if PS == 0:
+#             Qi = 0
+#         else:
+#             # Qi = PD[i]/PS*setpts[0] # setpts[0] assumed to be downstream flow setpoint
+#             Qi = sum(PD[0:i+1])/PS*setpts[0]*max_flow # setpts[0] assumed to be downstream flow setpoint
+#         if ustream[i] == 0:
+#             action[i] = 0.5
+#         else:
+#             h2i = Qi/(1.0*1*np.sqrt(2*9.81*ustream[i]))
+# #             h2i = Qi/(0.61*1*np.sqrt(2*9.81*ustream[i]))
+#             action[i] = max(min(h2i/2,1.0),0.0)
+# #         if ustream[i] > 0.95:
+# #             action[i] = 1.0
 
-    return p, PD, PS, action
+#     return p, PD, PS, action
 
-def run_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,performanceDict):
+def run_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,performanceDict,timestep):
     with Simulation(swmmINP) as sim:
-        freq = '12s'
-        timesteps = pd.date_range(sim.start_time,sim.end_time,freq=freq)
+        units = sim.system_units
         price = []
         PDemand = []
         
         nodes = Nodes(sim)
         links = Links(sim)
         
+        
+        # Initialize pyswmm variables for control, upstream, and downstream points.
         for point in controlDict:
             controlDict[point]['pyswmmVar'] = links[point]
         for point in upstreamDict:
@@ -173,61 +237,84 @@ def run_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,perfo
             except:
                 upstreamDict[point]['pyswmmVar'] = nodes[point]
         for point in downstreamDict:
-            downstreamDict[point]['pyswmmVar'] = links[point]
-        for point in performanceDict:
-            if performanceDict[point]['type'] == 'orifice' or performanceDict[point] == 'junction' or performanceDict[point] == 'storage':
-                performanceDict[point]['pyswmmVar'] = nodes[point]
-            elif performanceDict[point]['type'] == 'link':
-                performanceDict[point]['pyswmmVar'] = links[point]
-
+            if downstreamDict[point]['type'] == 'link':
+                downstreamDict[point]['pyswmmVar'] = links[point]
+            if downstreamDict[point]['type'] == 'storage':
+                downstreamDict[point]['pyswmmVar'] = nodes[point]
         
+        # Initialize pyswmm variables for variables associated with performance metrics.
+        for point in performanceDict:
+            # IF node
+            if performanceDict[point]['type'] == 'outfall' or performanceDict[point] == 'junction' or performanceDict[point] == 'storage':
+                performanceDict[point]['pyswmmVar'] = nodes[point]
+            # IF link
+            elif performanceDict[point]['type'] == 'link' or performanceDict[point]['type'] == 'orifice':
+                performanceDict[point]['pyswmmVar'] = links[point]
+            else:
+                pass
+
+        # SENT THESE TO OLD MBC FUNCTION... Depricated. NO longer necessary.
         # These currently don't change per timestep. That is a possibility though
-        setpts = np.array([downstreamDict[dsKeys[0]]['set_point'],downstreamDict[dsKeys[0]]['set_derivative']])
-        dparam = [downstreamDict[dsKeys[0]]['epsilon'],downstreamDict[dsKeys[0]]['gamma']]
-        uparam = np.array([upstreamDict[i]['uparam'] for i in upstreamDict]) #for now make it a scalar... can diversify if needed once we want to prioritize upstream links above others
-        n_tanks = len(upstreamDict)
+        # setpts = np.array([downstreamDict[dsKeys[0]]['set_point'],downstreamDict[dsKeys[0]]['set_derivative']])
+        # dparam = [downstreamDict[dsKeys[0]]['epsilon'],downstreamDict[dsKeys[0]]['gamma']]
+        # uparam = np.array([upstreamDict[i]['uparam'] for i in upstreamDict]) 
+        # n_tanks = len(upstreamDict)
+        
 
         print('running simulation...')
         for step in sim:
+            # append measures to timeseries for each upstream and downstream location
             for point in upstreamDict:
                 upstreamDict[point]['ts'].append(upstreamDict[point]['pyswmmVar'].depth / upstreamDict[point]['max_depth'])
             for point in downstreamDict:
-                downstreamDict[point]['ts_flow'].append(downstreamDict[point]['pyswmmVar'].flow / downstreamDict[point]['max_flow'])
-                downstreamDict[point]['ts_depth'].append(downstreamDict[point]['pyswmmVar'].depth / downstreamDict[point]['max_depth'])
+                try:
+                    # if link
+                    downstreamDict[point]['ts_flow'].append(downstreamDict[point]['pyswmmVar'].flow / downstreamDict[point]['max_flow'])
+                    downstreamDict[point]['ts_depth'].append(downstreamDict[point]['pyswmmVar'].depth / downstreamDict[point]['max_depth'])
+                except: 
+                    # if node
+                    downstreamDict[point]['ts_depth'].append(downstreamDict[point]['pyswmmVar'].depth / downstreamDict[point]['max_depth'])
+            
+            # append measures to timeseries for performance metric locations
             for point in performanceDict:
-                try:
+                try: # if link
                     performanceDict[point]['ts_flow'].append(performanceDict[point]['pyswmmVar'].flow)
-                except:
-                    pass
-
-                try:
+                except:  # if node
                     performanceDict[point]['ts_flow'].append(performanceDict[point]['pyswmmVar'].total_inflow)
-                except:
-                    pass
             
             ustream = np.array([upstreamDict[i]['ts'][-1] for i in upstreamDict])
-            try:
-                dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],downstreamDict[dsKeys[0]]['ts_flow'][-1]-downstreamDict[dsKeys[0]]['ts_flow'][-2]])
-            except:
-                dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],0])
+            
+            # if downstream set point is flow
+            if downstreamDict[dsKeys[0]] == 'link':
+                try:
+                    dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],downstreamDict[dsKeys[0]]['ts_flow'][-1]-downstreamDict[dsKeys[0]]['ts_flow'][-2]])
+                except:
+                    dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],0])
+            
+            # else downstream set point in depth/storage
+            else:
+                try:
+                    dstream = np.array([downstreamDict[dsKeys[0]]['ts_depth'][-1],downstreamDict[dsKeys[0]]['ts_depth'][-1]-downstreamDict[dsKeys[0]]['ts_depth'][-2]])
+                except:
+                    dstream = np.array([downstreamDict[dsKeys[0]]['ts_depth'][-1],0])
             
             
-            action = [controlDict[i]['action'] for i in controlDict]
-            p, PD, PS, action = fnctn(ustream, dstream, setpts, uparam, dparam, n_tanks, action,downstreamDict[dsKeys[0]]['max_flow'],controlDict)
+            #action = [controlDict[i]['action'] for i in controlDict]
+            # p, PD, PS, action = fnctn(ustream, dstream, setpts, uparam, dparam, n_tanks, action,downstreamDict[dsKeys[0]]['max_flow'],controlDict)
+            # for point,i in zip(controlDict,range(0,len(action))):
+                # controlDict[point]['actionTS'].append(action[i])
             
             # try new function for mbc.
-            new_fnctn(upstreamDict,downstreamDict,controlDict, dsKeys, price, PDemand, nodes)
-            # print([controlDict[i]['action'] for i in controlDict])
+            new_fnctn(upstreamDict,downstreamDict,controlDict, dsKeys, price, PDemand, nodes, timestep, units)
             
-            # for point,i in zip(controlDict,range(0,len(action))):
             for point in controlDict:
                 controlDict[point]['pyswmmVar'].target_setting = controlDict[point]['action']
-                # controlDict[point]['actionTS'].append(action[i])
                 controlDict[point]['actionTS'].append(controlDict[point]['action'])
                 
                 
     print('done ...')
-    return timesteps,price,PDemand
+    winsound.Beep(440, 1000) # (Hz, millisecond)
+    return price,PDemand
 
 def run_no_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,performanceDict):
     with Simulation(swmmINP) as sim:
@@ -246,7 +333,7 @@ def run_no_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,pe
         for point in downstreamDict:
             downstreamDict[point]['pyswmmVar'] = links[point]
         for point in performanceDict:
-            if performanceDict[point]['type'] == 'orifice' or performanceDict[point] == 'junction' or performanceDict[point] == 'storage':
+            if performanceDict[point]['type'] == 'outfall' or performanceDict[point] == 'junction' or performanceDict[point] == 'storage':
                 performanceDict[point]['pyswmmVar'] = nodes[point]
             elif performanceDict[point]['type'] == 'link':
                 performanceDict[point]['pyswmmVar'] = links[point]
@@ -300,7 +387,10 @@ def save_that_shit(saveDict):
 
     if 'downstreamDict' in varL:
         for i in saveDict['downstreamDict']:
-            metadata = metadata + [i,saveDict['downstreamDict'][i]['epsilon'],saveDict['downstreamDict'][i]['gamma'],saveDict['downstreamDict'][i]['max_flow'],saveDict['downstreamDict'][i]['max_depth'],saveDict['downstreamDict'][i]['set_point'],saveDict['downstreamDict'][i]['set_derivative']]
+            try:
+                metadata = metadata + [i,saveDict['downstreamDict'][i]['epsilon'],saveDict['downstreamDict'][i]['gamma'],saveDict['downstreamDict'][i]['max_flow'],saveDict['downstreamDict'][i]['max_depth'],saveDict['downstreamDict'][i]['set_point'],saveDict['downstreamDict'][i]['set_derivative']]
+            except:
+                metadata = metadata + [i,saveDict['downstreamDict'][i]['epsilon'],saveDict['downstreamDict'][i]['gamma'],'no max flow',saveDict['downstreamDict'][i]['max_depth'],saveDict['downstreamDict'][i]['set_point'],saveDict['downstreamDict'][i]['set_derivative']]
     else:
         for i in saveDict['downstreamDict']:
             metadata = metadata + ['na']
@@ -331,8 +421,8 @@ def viz_shit(f_nocontrol,f_control,figname):
     
     # make legend
     leg = []
-    leg = leg + [data_control['upstreamDict'][i]['DScp'] for i in data_control['upstreamDict']]
-    leg = leg + [data_nocontrol['upstreamDict'][i]['DScp'] for i in data_nocontrol['upstreamDict']]
+    leg = leg + [data_control['upstreamDict'][i]['location'] for i in data_control['upstreamDict']]
+    leg = leg + [data_nocontrol['upstreamDict'][i]['location'] for i in data_nocontrol['upstreamDict']]
     axarr[0,0].legend(leg,title = 'Control__, No Control ..', ncol=2,loc=4)
     axarr[0,0].set_ylabel('Normalized Depth')
     # leg_control = plt.legend([data_control['upstreamDict'][i]['DScp'] for i in data_control['upstreamDict']])
@@ -342,11 +432,11 @@ def viz_shit(f_nocontrol,f_control,figname):
     # plt.show()
 
     for p1,p2 in zip(data_control['downstreamDict'],data_nocontrol['downstreamDict']):
-        axarr[0,1].plot(data_control['downstreamDict'][p1]['ts_flow'])
-        axarr[0,1].plot(data_nocontrol['downstreamDict'][p2]['ts_flow'],color='k',linestyle=':')
-    axarr[0,1].set_title('Downstream Flow')
-    axarr[0,1].legend(['Control', 'No Control'])
-    axarr[0,1].set_ylabel('Normalized Flow')
+        axarr[1,1].plot(data_control['downstreamDict'][p1]['ts_flow'])
+        axarr[1,1].plot(data_nocontrol['downstreamDict'][p2]['ts_flow'],color='k',linestyle=':')
+    axarr[1,1].set_title('Downstream Flow')
+    axarr[1,1].legend(['Control', 'No Control'])
+    axarr[1,1].set_ylabel('Normalized Flow')
     # plt.show()
 
     for p1,p2 in zip(data_control['downstreamDict'],data_nocontrol['downstreamDict']):
@@ -356,8 +446,8 @@ def viz_shit(f_nocontrol,f_control,figname):
     axarr[1,0].legend(['Control','No Control'])
     axarr[1,0].set_ylabel('Noramlized Depth')
 
-    # axarr[1,1].plot(data_control['performanceDict']['1002'])
-    # axarr[1,1].plot(data_nocontrol['performanceDict']['1002'],color='k',linestyle=':')
+    axarr[0,1].plot(data_control['performanceDict']['1002']['ts_flow'])
+    axarr[0,1].plot(data_nocontrol['performanceDict']['1002']['ts_flow'],color='k',linestyle=':')
     plt.show()
 
     # plt.savefig(figname)

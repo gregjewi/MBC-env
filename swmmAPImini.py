@@ -1,6 +1,7 @@
 import math
 import pandas as pd
 from collections import OrderedDict
+from pyswmm import Simulation
 
 def make_element_dictionaries():
     conduitF = 'swmmModelElements/CONDUITS.txt'
@@ -114,6 +115,13 @@ def make_storage_dictionary(storF):
             #Ksat
             #IMD
         }
+        
+        if l[4] == 'FUNCTIONAL':
+            storageDict[l[0]]['A'] = float(l[5])
+            storageDict[l[0]]['B'] = float(l[6])
+            storageDict[l[0]]['C'] = float(l[7])
+            
+    storageDict = calc_storage_vol(storageDict)
     
     return storageDict
 
@@ -246,6 +254,16 @@ def make_curves_dictionary(curvesF):
             
     return curves
 
+def calc_storage_vol(storageDict):
+    for element in storageDict:
+        if storageDict[element]['shape'] == 'FUNCTIONAL':
+            storageDict[element]['total_storage'] = ( storageDict[element]['A'] * storageDict[element]['max_depth']**(storageDict[element]['B'] + 1) / ( storageDict[element]['B'] + 1 ) ) + ( storageDict[element]['C'] * storageDict[element]['max_depth'] )
+        else:
+            # do something here to add in storage curves
+            pass
+    
+    return storageDict
+
 def calc_slope(conduitDict,nodeDict,storageDict,min_slope):
     for item in conduitDict:
         if conduitDict[item]['from_node'] in nodeDict.keys():
@@ -345,22 +363,26 @@ def get_depth(elements,conduits,storages):
         else:
             pass
 
-def get_q_full(elements,conduits):
+def get_q_full_and_other(elements,conduits,storages):
     for element in elements:
         if elements[element]['type'] == 'link':
             elements[element]['max_flow'] = conduits[element]['q_full']
+        elif elements[element]['type'] == 'storage':
+            elements[element]['total_storage'] = storages[element]['total_storage']
         else:
             pass
 
-def performance_elements(elements,conduits,nodes,storages,subcatchments,outfalls):
+def performance_elements(elements,conduits,nodes,storages,subcatchments,outfalls,orifices):
     for element in elements:
-        if elements[element]['type'] == 'orifice':
+        if elements[element]['type'] == 'outfall':
             elements[element]['elevation'] = outfalls[element]['elevation']
             elements[element]['elev_detroit'] = outfalls[element]['elev_detroit']
         elif elements[element]['type'] == 'link':
             elements[element]['max_depth'] = conduits[element]['geom1']
         elif elements[element]['type'] == 'storage':
             elements[element]['max_depth'] = storages[element]['max_depth']
+        elif elements[element]['type'] == 'orifice':
+            elements[element]['max_depth'] = orifices[element]['geom1']
         else:
             pass
 
@@ -379,3 +401,20 @@ def pump_curve_grab(controlDict, pumps):
             controlDict[i].update(pumps[i])
         except:
             pass
+        
+def get_timestep(inF):
+    with open(inF) as inputF:
+        routing_step = False
+        for l in inputF:
+            if l[:12] == 'ROUTING_STEP':
+                routing_step = l
+            else:
+                pass
+
+            if routing_step:
+                step_str = routing_step.split()[1].split(':')
+                
+                timestep_sec = float(step_str[0])*60*60 + float(step_str[1])*60 + float(step_str[2])
+                
+                return timestep_sec
+    
