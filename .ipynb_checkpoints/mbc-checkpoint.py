@@ -31,7 +31,7 @@ def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes
     
     # Set pareto optimal price
     p = (sum(uparam*ustream) + sum(dparam*(dstream-setpts)))/(1 + n_tanks)
-
+    
     # Initialize demand array holder
     PD = np.zeros(n_tanks)
     
@@ -49,11 +49,19 @@ def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes
         if PS == 0:
             controlDict[j]['q_goal'] = 0
         else:
+            
+            if upstreamDict[i]['ts'][-1] > 0.95:
+                controlDict[j]['flag'] = True
+            else:
+                pass
+            
             if downstreamDict[dsKeys[0]]['type'] == 'link':
                 # have not implemented cascasding summation for ISDs in series, etc.
-                controlDict[j]['q_goal'] = upstreamDict[i]['PD'][-1]/PS*setpts[0]*downstreamDict[dsKeys[0]]['max_flow'] # setpts[0] assumed to be downstream flow/depth setpoint
+                controlDict[j]['q_goal'] = upstreamDict[i]['PD'][-1]*setpts[0]*downstreamDict[dsKeys[0]]['max_flow'] # setpts[0] assumed to be downstream flow/depth setpoint
+                # print(controlDict[j]['q_goal'])
             elif downstreamDict[dsKeys[0]]['type'] == 'storage':
-                controlDict[j]['q_goal'] = upstreamDict[i]['PD'][-1]*downstreamDict[dsKeys[0]]['total_storage']/timestep
+                controlDict[j]['q_goal'] = upstreamDict[i]['PD'][-1]*downstreamDict[dsKeys[0]]['total_storage']/timestep 
+                # print(controlDict[j]['q_goal'])
             elif downstreamDict[dsKeys[0]]['type'] == 'outfall':
                 # do something here
                 pass
@@ -63,8 +71,11 @@ def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes
         if upstreamDict[i]['ts'][-1] == 0:
             controlDict[j]['action'] = 0.0 #Keep orifice closed
         else:
-            # Send dictionary of control points. "Output" is changing the 'action', meaning target_setting.
-            get_target_setting(controlDict,nodes, units)
+            pass
+            
+
+    # Send dictionary of control points. "Output" is changing the 'action', meaning target_setting.
+    get_target_setting(controlDict, nodes, units)
     
     price.append(p)
     PDemand.append(PD)
@@ -134,13 +145,14 @@ def get_target_setting(controlDict, nodes, units):
             # no head at orifice
             if H < 0.1 or f <= 0.0:
                 controlDict[i]['action'] = 0.0
-                # print('Head too small')
+                # print('Orifice head too small, action 0.0')
             elif h2 > h1:
                 controlDict[i]['action'] = 0.0
                 print('Backward flow condition, orifice closed')
             
             # Weir Flow
             elif (f < 1.0 and H > 0.1):
+                # print(i, 'Weir Flow')
                 A_open = controlDict[i]['q_goal'] / ( controlDict[i]['Cd'] * np.sqrt(2*g*H) * (2.0/3.0) )
                 
                 if controlDict[i]['shape'] == 'CIRCULAR':
@@ -149,9 +161,11 @@ def get_target_setting(controlDict, nodes, units):
                 else:
                     A_ratio = A_open / ( controlDict[i]['geom1'] * controlDict[i]['geom2'] )
                     controlDict[i]['action'] = A_ratio
+                    print(i, 'Weir Flow', 'Action', A_ratio)
             
             # True orifice flow
             else:
+                
                 # since q = Cd * A_open * sqrt( 2 g H )
                 A_open = controlDict[i]['q_goal'] / ( controlDict[i]['Cd'] * np.sqrt(2*g*H) )
                 
@@ -161,6 +175,7 @@ def get_target_setting(controlDict, nodes, units):
                 else:
                     A_ratio = A_open / ( controlDict[i]['geom1'] * controlDict[i]['geom2'] )
                     controlDict[i]['action'] = A_ratio
+                    # print(i, 'Orifice Flow', 'Action', A_ratio)
                     
     
         # Pump is true
@@ -173,52 +188,42 @@ def get_target_setting(controlDict, nodes, units):
 
             elif controlDict[i]['curve_info']['type'] == 'PUMP3':
                 head = h2 - h1 # pump pushes water from low head (h1) to higher head (h2)
-
-                # calculate q_full at given head.
+                
+                # falsely set head to be min or max value on curve if value is above or below.
+                if head > float(max(controlDict[i]['curve_info']['x_val'])):
+                    head = float(max(controlDict[i]['curve_info']['x_val']))
+                elif head < float(min(controlDict[i]['curve_info']['x_val'])):
+                    head = float(min(controlDict[i]['curve_info']['x_val']))
+                
+                # calculate flow at given head from pump if action == 1.0.
                 q_full = np.interp(
                     head,
                     np.array(controlDict[i]['curve_info']['x_val'],dtype='float64'),
                     np.array(controlDict[i]['curve_info']['y_val'],dtype='float64'),
                     )
-
-                if controlDict[i]['q_goal'] == 0.0:
-                    controlDict[i]['action'] = 0.0
-                else:
-                    controlDict[i]['action'] = q_full / controlDict[i]['q_goal']
-
+                
+                controlDict[i]['action'] = min(controlDict[i]['q_goal'] / q_full ,  1.0)
+                
+                # print(i, controlDict[i]['q_goal'] / q_full, controlDict[i]['action'])
+                
             elif controlDict[i]['curve_info']['type'] == 'PUMP4':
                 print(i, 'Pump type 4...')
         
         
+        if controlDict[i]['flag']:
+            controlDict[i]['action'] = 1.0
+            controlDict[i]['flag'] = False
+        
         # if target setting greater than 1, only open to 1.
         controlDict[i]['action'] = min(max(controlDict[i]['action'],0.0),1.0)
+        
+        
+    for point in controlDict:
+        controlDict[point]['pyswmmVar'].target_setting = controlDict[point]['action']
+        controlDict[point]['actionTS'].append(controlDict[point]['action'])
+        
 
-
-# def fnctn(ustream, dstream, setpts, uparam, dparam, n_tanks, action,max_flow,controlDict):
-#     p = (sum(uparam*ustream) + sum(dparam*(dstream-setpts)))/(1 + n_tanks)
-#     PD = np.zeros(n_tanks)
-#     for i in range(0,n_tanks):
-#         PD[i] = max(-p + uparam[i]*ustream[i],0)
-#     PS = sum(PD)
-    
-#     for i in range(0,n_tanks):
-#         if PS == 0:
-#             Qi = 0
-#         else:
-#             # Qi = PD[i]/PS*setpts[0] # setpts[0] assumed to be downstream flow setpoint
-#             Qi = sum(PD[0:i+1])/PS*setpts[0]*max_flow # setpts[0] assumed to be downstream flow setpoint
-#         if ustream[i] == 0:
-#             action[i] = 0.5
-#         else:
-#             h2i = Qi/(1.0*1*np.sqrt(2*9.81*ustream[i]))
-# #             h2i = Qi/(0.61*1*np.sqrt(2*9.81*ustream[i]))
-#             action[i] = max(min(h2i/2,1.0),0.0)
-# #         if ustream[i] > 0.95:
-# #             action[i] = 1.0
-
-#     return p, PD, PS, action
-
-def run_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,performanceDict,timestep):
+def run_control_sim(control, controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,performanceDict,timestep):
     with Simulation(swmmINP) as sim:
         units = sim.system_units
         price = []
@@ -231,6 +236,8 @@ def run_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,perfo
         # Initialize pyswmm variables for control, upstream, and downstream points.
         for point in controlDict:
             controlDict[point]['pyswmmVar'] = links[point]
+            controlDict[point]['flag'] = False
+            
         for point in upstreamDict:
             try:
                 upstreamDict[point]['pyswmmVar'] = links[point]
@@ -253,17 +260,10 @@ def run_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,perfo
             else:
                 pass
 
-        # SENT THESE TO OLD MBC FUNCTION... Depricated. NO longer necessary.
-        # These currently don't change per timestep. That is a possibility though
-        # setpts = np.array([downstreamDict[dsKeys[0]]['set_point'],downstreamDict[dsKeys[0]]['set_derivative']])
-        # dparam = [downstreamDict[dsKeys[0]]['epsilon'],downstreamDict[dsKeys[0]]['gamma']]
-        # uparam = np.array([upstreamDict[i]['uparam'] for i in upstreamDict]) 
-        # n_tanks = len(upstreamDict)
-        
-
         print('running simulation...')
         for step in sim:
-            # append measures to timeseries for each upstream and downstream location
+            # print(sim.current_time)
+            # append NORMALIZED measures to timeseries for each upstream and downstream location
             for point in upstreamDict:
                 upstreamDict[point]['ts'].append(upstreamDict[point]['pyswmmVar'].depth / upstreamDict[point]['max_depth'])
             for point in downstreamDict:
@@ -283,11 +283,13 @@ def run_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,perfo
                     performanceDict[point]['ts_flow'].append(performanceDict[point]['pyswmmVar'].total_inflow)
             
             ustream = np.array([upstreamDict[i]['ts'][-1] for i in upstreamDict])
+            # print(ustream)
             
             # if downstream set point is flow
             if downstreamDict[dsKeys[0]] == 'link':
                 try:
                     dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],downstreamDict[dsKeys[0]]['ts_flow'][-1]-downstreamDict[dsKeys[0]]['ts_flow'][-2]])
+                    
                 except:
                     dstream = np.array([downstreamDict[dsKeys[0]]['ts_flow'][-1],0])
             
@@ -295,21 +297,13 @@ def run_control_sim(controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,perfo
             else:
                 try:
                     dstream = np.array([downstreamDict[dsKeys[0]]['ts_depth'][-1],downstreamDict[dsKeys[0]]['ts_depth'][-1]-downstreamDict[dsKeys[0]]['ts_depth'][-2]])
+                    # print(dstream)
                 except:
                     dstream = np.array([downstreamDict[dsKeys[0]]['ts_depth'][-1],0])
             
-            
-            #action = [controlDict[i]['action'] for i in controlDict]
-            # p, PD, PS, action = fnctn(ustream, dstream, setpts, uparam, dparam, n_tanks, action,downstreamDict[dsKeys[0]]['max_flow'],controlDict)
-            # for point,i in zip(controlDict,range(0,len(action))):
-                # controlDict[point]['actionTS'].append(action[i])
-            
-            # try new function for mbc.
-            new_fnctn(upstreamDict,downstreamDict,controlDict, dsKeys, price, PDemand, nodes, timestep, units)
-            
-            for point in controlDict:
-                controlDict[point]['pyswmmVar'].target_setting = controlDict[point]['action']
-                controlDict[point]['actionTS'].append(controlDict[point]['action'])
+            if control:
+                # try new function for mbc.
+                new_fnctn(upstreamDict,downstreamDict,controlDict, dsKeys, price, PDemand, nodes, timestep, units)
                 
                 
     print('done ...')
@@ -411,33 +405,39 @@ def viz_shit(f_nocontrol,f_control,figname):
         data_control = pickle.load(fC)
         data_nocontrol = pickle.load(fNC)
 
-    fig,axarr = plt.subplots(2,2, figsize=(12,8))
+    fig,axarr = plt.subplots(2,2, figsize=(15,12))
 
     # Plot Control Points onto the figures
     for p1,p2 in zip(data_control['upstreamDict'],data_nocontrol['upstreamDict']):
         axarr[0,0].plot(data_control['upstreamDict'][p1]['ts'])
-        axarr[0,0].plot(data_nocontrol['upstreamDict'][p2]['ts'],linestyle=':')
+        axarr[0,0].plot(data_nocontrol['upstreamDict'][p2]['ts'],linestyle='--',linewidth=3)
     axarr[0,0].set_title('Upstream Depth')
     
     # make legend
     leg = []
     leg = leg + [data_control['upstreamDict'][i]['location'] for i in data_control['upstreamDict']]
     leg = leg + [data_nocontrol['upstreamDict'][i]['location'] for i in data_nocontrol['upstreamDict']]
-    axarr[0,0].legend(leg,title = 'Control__, No Control ..', ncol=2,loc=4)
+    axarr[0,0].legend(leg,title = 'Control__, No Control ..', ncol=2)
     axarr[0,0].set_ylabel('Normalized Depth')
-    # leg_control = plt.legend([data_control['upstreamDict'][i]['DScp'] for i in data_control['upstreamDict']])
+    leg_control = plt.legend([data_control['upstreamDict'][i]['DScp'] for i in data_control['upstreamDict']])
     # axarr[0,0].add_artist(leg_control)
     # leg_nocontrol = [data_nocontrol['upstreamDict'][i]['DScp'] for i in data_nocontrol['upstreamDict']]
     # axarr[0,0].legend(leg_nocontrol)
     # plt.show()
 
-    for p1,p2 in zip(data_control['downstreamDict'],data_nocontrol['downstreamDict']):
-        axarr[1,1].plot(data_control['downstreamDict'][p1]['ts_flow'])
-        axarr[1,1].plot(data_nocontrol['downstreamDict'][p2]['ts_flow'],color='k',linestyle=':')
-    axarr[1,1].set_title('Downstream Flow')
-    axarr[1,1].legend(['Control', 'No Control'])
-    axarr[1,1].set_ylabel('Normalized Flow')
+    # for p1,p2 in zip(data_control['downstreamDict'],data_nocontrol['downstreamDict']):
+    #     axarr[1,1].plot(data_control['downstreamDict'][p1]['ts_flow'])
+    #     axarr[1,1].plot(data_nocontrol['downstreamDict'][p2]['ts_flow'],color='k',linestyle=':')
+    # axarr[1,1].set_title('Downstream Flow')
+    # axarr[1,1].legend(['Control', 'No Control'])
+    # axarr[1,1].set_ylabel('Normalized Flow')
     # plt.show()
+    
+    axarr[1,1].plot(abs(np.array(data_control['price'])))
+    axarr[1,1].plot(data_control['PDemand'])
+    axarr[1,1].set_title('Price Curves')
+    axarr[1,1].legend(['Price'] + [data_control['upstreamDict'][i]['location'] for i in data_control['upstreamDict']])
+    axarr[1,1].set_ylabel('Cost')
 
     for p1,p2 in zip(data_control['downstreamDict'],data_nocontrol['downstreamDict']):
         axarr[1,0].plot(data_control['downstreamDict'][p1]['ts_depth'])
@@ -448,9 +448,12 @@ def viz_shit(f_nocontrol,f_control,figname):
 
     axarr[0,1].plot(data_control['performanceDict']['1002']['ts_flow'])
     axarr[0,1].plot(data_nocontrol['performanceDict']['1002']['ts_flow'],color='k',linestyle=':')
-    plt.show()
+    axarr[0,1].set_title('Flow Into WRRF')
+    axarr[0,1].legend(['Control','No Control'])
+    
 
-    # plt.savefig(figname)
+    plt.savefig(figname)
+    plt.show()
     plt.close()
 
     # plt.plot()
@@ -461,5 +464,3 @@ def viz_shit(f_nocontrol,f_control,figname):
     # # axarr.set_ylabel('Flow [cfs]')
     # plt.show()
     # plt.close()
-
-    # return fig

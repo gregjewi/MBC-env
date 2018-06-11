@@ -1,4 +1,4 @@
 name,type,DScp,measure,beta,uparam,location
-17311,link,ORIFICE33@17312-17313,depth,1,10,CC Forebay
-5220,storage,PUMP44@5220-5219,depth,10,10,Freud Storm PS
-5010,storage,PUMP34@5010-5009,depth,10,10,CC Storm PS
+2912,link,ORIFICE33@17312-17313,depth,1,1,CC Forebay
+5220,storage,PUMP44@5220-5219,depth,1,1,Freud Storm PS
+5010,storage,PUMP34@5010-5009,depth,1,1,CC Storm PS

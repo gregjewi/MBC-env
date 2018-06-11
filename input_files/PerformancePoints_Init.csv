@@ -6,3 +6,8 @@ name,type
 2908,outfall
 ORIFICE22@2909-2999,orifice
 17313,link
+50091,link
+50092,link
+PUMP44@5220-5219,link
+ORIFICE33@17312-17313,link
+PUMP34@5010-5009,link

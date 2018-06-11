@@ -1,2 +1,2 @@
 name,type,measure,epsilon,gamma,max_depth,set_point,set_derivative,location
-2909,storage,depth,10,0,1,5,0,CC RTB
+2909,storage,depth,0,0,1,0.3,0,CC RTB
