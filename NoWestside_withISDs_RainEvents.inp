@@ -52,60 +52,60 @@ DRY_ONLY         NO
 [RAINGAGES]
 ;;Name           Format    Interval SCF      Source    
 ;;-------------- --------- ------ ------ ----------
-CHS5             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-CTS1             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-CTS2             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-CTS3             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-CTS4             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-CTUMA            CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-FRS1             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-HRS1             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-HRS2             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-MAS2             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG01             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG02             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG027            CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG028            CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG03             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG04             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG05             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG06             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG07             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG08             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG09             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG10             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG11             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG12             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG13             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG14             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG15             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG16             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG17             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG18             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG19             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG20             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG21             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG22             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG23             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG24             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG25             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG26             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG29             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG30             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG31             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG32             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG33             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-PG34             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-STS1             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-STS2             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-STS3             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-STS4             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-STS5             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-STS6             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-SYS1             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-SYS2             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-SYS3             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
-UTS1             CUMULATIVE 0.250000 1.000000 TIMESERIES half_inch       
+CHS5             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+CTS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+CTS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+CTS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+CTS4             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+CTUMA            CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+FRS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+HRS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+HRS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+MAS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG01             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG02             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG027            CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG028            CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG03             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG04             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG05             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG06             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG07             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG08             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG09             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG10             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG11             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG12             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG13             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG14             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG15             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG16             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG17             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG18             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG19             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG20             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG21             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG22             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG23             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG24             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG25             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG26             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG29             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG30             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG31             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG32             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG33             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+PG34             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+STS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+STS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+STS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+STS4             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+STS5             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+STS6             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+SYS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+SYS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+SYS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
+UTS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG002       
 
 [SUBCATCHMENTS]
 ;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
@@ -7682,7 +7682,7 @@ ISDDR02_DOWN     1925             19202            SIDE         0          1    
 ISDDR02_UP       1925             19201            SIDE         0          1          NO       0         
 ORIFICE19@19401-19400 19401            19400            SIDE         0.000000   1.000000   NO       0.500000  
 ;Conner Basin
-ORIFICE22@2909-2999 2909             2999             SIDE         0.000000   0.0        NO       0.010000  
+ORIFICE22@2909-2999 2909             2999             SIDE         0.000000   1.000000   NO       0.010000  
 ;Baby Creek VR-7
 ORIFICE26@1791-1789 1791             1789             SIDE         0.000000   1.000000   NO       0.010000  
 ;St. Aubin
@@ -7694,7 +7694,7 @@ ORIFICE29@2701-2702 2701             2702             SIDE         0.000000   0.
 ORIFICE3@7041-70412 7041             70412            SIDE         0.000000   1.000000   NO       0.500000  
 ORIFICE30@1795-1798 1795             1798             SIDE         0.000000   1.000000   NO       0.500000  
 ;Roller Gate representation
-ORIFICE33@17312-17313 17312            17313            SIDE         0.000000   1.0        NO       0.320000  
+ORIFICE33@17312-17313 17312            17313            SIDE         0.000000   1.0        NO       0.0       
 ;Edited: 6/01 WT tg Added Orifice to Represent Dewatering
 ;system to NWI-Puritan/Fenkell
 ORIFICE34@6167-61671 6167             61671            SIDE         0.000000   0.600000   NO       0.500000  
@@ -13346,14 +13346,6 @@ RC92052          0.000000   0.000000   0.000000   NO         0
 RC92053          0.000000   0.000000   0.000000   NO         0         
 
 [CONTROLS]
-RULE CC-RTB-DEWATER-1
-IF NODE 2909 DEPTH < 10.00
-THEN ORIFICE ORIFICE22@2909-2999 SETTING = 1.000000
-PRIORITY 1.000000
-RULE CC-RTB-DEWATER-2
-IF NODE 2909 DEPTH > 9.90
-THEN ORIFICE ORIFICE22@2909-2999 SETTING = 0.000000
-PRIORITY 2.000000
 RULE DAMS
 IF SIMULATION TIME >= 00:00:00
 THEN ORIFICE ISD001_UP SETTING = 0.0
@@ -13485,6 +13477,14 @@ RULE ORIFICE19B
 IF NODE 10251 DEPTH <= 9.000000
 THEN ORIFICE ORIFICE19@19401-19400 SETTING = 1.000000
 PRIORITY 2.000000
+RULE ORIFICE22A
+IF NODE 1725 DEPTH > 7.400000
+THEN ORIFICE ORIFICE22@2909-2999 SETTING = 0.000000
+PRIORITY 1.000000
+RULE ORIFICE22B
+IF NODE 1725 DEPTH <= 7.200000
+THEN ORIFICE ORIFICE22@2909-2999 SETTING = 1.000000
+PRIORITY 2.000000
 RULE ORIFICE26A
 IF NODE 1776 DEPTH > 10.200000
 THEN ORIFICE ORIFICE26@1791-1789 SETTING = 0.000000
@@ -13524,6 +13524,14 @@ PRIORITY 1.000000
 RULE ORIFICE30B
 IF NODE 3405 DEPTH <= 8.000000
 THEN ORIFICE ORIFICE30@1795-1798 SETTING = 1.000000
+PRIORITY 2.000000
+RULE ORIFICE33A
+IF NODE 1731 DEPTH >= 17.400000
+THEN ORIFICE ORIFICE33@17312-17313 SETTING = 1.000000
+PRIORITY 1.000000
+RULE ORIFICE33B
+IF NODE 1731 DEPTH < 16.900000
+THEN ORIFICE ORIFICE33@17312-17313 SETTING = 0.000000
 PRIORITY 2.000000
 RULE ORIFICE34A
 IF NODE 6165 DEPTH > 4.500000
@@ -13669,54 +13677,6 @@ RULE PUMP25B
 IF NODE 3411 DEPTH < 0.200000
 THEN PUMP PUMP25@3411-3410 STATUS = OFF
 PRIORITY 2.000000
-RULE PUMP38A
-IF NODE 2999 DEPTH >= 6.250000
-THEN PUMP PUMP38@2999-5007 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP38B
-IF NODE 2999 DEPTH < 3.750000
-THEN PUMP PUMP38@2999-5007 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP39A
-IF NODE 2999 DEPTH >= 8.250000
-THEN PUMP PUMP39@2999-5007 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP39B
-IF NODE 2999 DEPTH < 3.750000
-THEN PUMP PUMP39@2999-5007 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP40A
-IF NODE 2999 DEPTH >= 10.250000
-THEN PUMP PUMP40@2999-5007 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP40B
-IF NODE 2999 DEPTH < 3.750000
-THEN PUMP PUMP40@2999-5007 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP41A
-IF NODE 2999 DEPTH >= 12.250000
-THEN PUMP PUMP41@2999-5007 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP41B
-IF NODE 2999 DEPTH < 3.750000
-THEN PUMP PUMP41@2999-5007 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP42A
-IF NODE 5220 DEPTH >= 11.000000
-THEN PUMP PUMP42@5220-5106 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP42B
-IF NODE 5220 DEPTH < 1.000000
-THEN PUMP PUMP42@5220-5106 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP43A
-IF NODE 5220 DEPTH >= 26.000000
-THEN PUMP PUMP43@5220-5106 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP43B
-IF NODE 5220 DEPTH < 11.000000
-THEN PUMP PUMP43@5220-5106 STATUS = OFF
-PRIORITY 2.000000
 RULE PUMP48A
 IF NODE 5729 DEPTH >= 5.000000
 THEN PUMP PUMP48@5729-5730 STATUS = ON
@@ -13861,6 +13821,8 @@ RULE PUMP83B
 IF NODE 11600 DEPTH < 24.000000
 THEN PUMP PUMP83@11600-11601 STATUS = OFF
 PRIORITY 2.000000
+
+
 
 [INFLOWS]
 ;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
@@ -22781,68 +22743,6 @@ CLINTONDALE                 38.000000  1017.876020
 [TIMESERIES]
 ;;Name           Date       Time       Value     
 ;;-------------- ---------- ---------- ----------
-half_inch                   0.00       0.0       
-half_inch                   0.25       0.0       
-half_inch                   0.50       0.0       
-half_inch                   0.75       0.0       
-half_inch                   1.00       0.0       
-half_inch                   1.25       0.0       
-half_inch                   1.50       0.0       
-half_inch                   1.75       0.0       
-half_inch                   2.00       0.0       
-half_inch                   2.25       0.0       
-half_inch                   2.50       0.0       
-half_inch                   2.75       0.0       
-half_inch                   3.00       0.0       
-half_inch                   3.25       0.0       
-half_inch                   3.50       0.0       
-half_inch                   3.75       0.0       
-half_inch                   4.00       0.0       
-half_inch                   4.25       0.0       
-half_inch                   4.50       0.0       
-half_inch                   4.75       0.0       
-half_inch                   5.00       0.0       
-half_inch                   5.25       0.0       
-half_inch                   5.50       0.0       
-half_inch                   5.75       0.0       
-half_inch                   6.00       0.0       
-half_inch                   6.25       0.0       
-half_inch                   6.50       0.0       
-half_inch                   6.75       0.0       
-half_inch                   7.00       0.0       
-half_inch                   7.25       0.0       
-half_inch                   7.50       0.0       
-half_inch                   7.75       0.020004  
-half_inch                   8.00       0.040009  
-half_inch                   8.25       0.060013  
-half_inch                   8.50       0.080017  
-half_inch                   8.75       0.100021  
-half_inch                   9.00       0.120026  
-half_inch                   9.25       0.14003   
-half_inch                   9.50       0.170036  
-half_inch                   9.75       0.190041  
-half_inch                   10.00      0.210045  
-half_inch                   10.25      0.250054  
-half_inch                   10.50      0.260056  
-half_inch                   10.75      0.28006   
-half_inch                   11.00      0.290062  
-half_inch                   11.25      0.290062  
-half_inch                   11.50      0.310066  
-half_inch                   11.75      0.320068  
-half_inch                   12.00      0.340073  
-half_inch                   12.25      0.360077  
-half_inch                   12.50      0.380081  
-half_inch                   12.75      0.390083  
-half_inch                   13.00      0.400086  
-half_inch                   13.25      0.410088  
-half_inch                   13.50      0.410088  
-half_inch                   13.75      0.430092  
-half_inch                   14.00      0.430092  
-half_inch                   14.25      0.440094  
-half_inch                   14.50      0.450096  
-half_inch                   14.75      0.470101  
-half_inch                   15.00      0.500107  
-;
 10YR1HR                     0.75       0.000000  
 10YR1HR                     1          0.800000  
 10YR1HR                     1.25       4.200000  
@@ -27599,6 +27499,42 @@ WARREN_13MILE               39.750000  0.741000
 WARREN_13MILE               39.833333  0.161000  
 WARREN_13MILE               39.916667  0.000000  
 WARREN_13MILE               40         0.000000  
+;
+;half_inch
+half_inch                   0          0         
+half_inch                   0.25       0         
+half_inch                   0.5        0         
+half_inch                   0.75       0         
+half_inch                   1          0.020004  
+half_inch                   1.25       0.040009  
+half_inch                   1.5        0.060013  
+half_inch                   1.75       0.080017  
+half_inch                   2          0.100021  
+half_inch                   2.25       0.120026  
+half_inch                   2.5        0.14003   
+half_inch                   2.75       0.170036  
+half_inch                   3          0.190041  
+half_inch                   3.25       0.210045  
+half_inch                   3.5        0.250054  
+half_inch                   3.75       0.260056  
+half_inch                   4          0.28006   
+half_inch                   4.25       0.290062  
+half_inch                   4.5        0.290062  
+half_inch                   4.75       0.310066  
+half_inch                   5          0.320068  
+half_inch                   5.25       0.340073  
+half_inch                   5.5        0.360077  
+half_inch                   5.75       0.380081  
+half_inch                   6          0.390083  
+half_inch                   6.25       0.400086  
+half_inch                   6.5        0.410088  
+half_inch                   6.75       0.410088  
+half_inch                   7          0.430092  
+half_inch                   7.25       0.430092  
+half_inch                   7.5        0.440094  
+half_inch                   7.75       0.450096  
+half_inch                   8          0.470101  
+half_inch                   8.25       0.500107  
 
 [PATTERNS]
 ;;Name           Type       Multipliers
