@@ -372,20 +372,15 @@ def get_q_full_and_other(elements,conduits,storages):
         else:
             pass
 
-def performance_elements(elements,conduits,nodes,storages,subcatchments,outfalls,orifices,pumps):
+def performance_elements(elements,conduits,nodes,storages,subcatchments,outfalls,orifices):
     for element in elements:
         if elements[element]['type'] == 'outfall':
             elements[element]['elevation'] = outfalls[element]['elevation']
             elements[element]['elev_detroit'] = outfalls[element]['elev_detroit']
         elif elements[element]['type'] == 'link':
-            try:
-                elements[element]['max_depth'] = conduits[element]['geom1']
-            except:
-                pass
+            elements[element]['max_depth'] = conduits[element]['geom1']
         elif elements[element]['type'] == 'storage':
             elements[element]['max_depth'] = storages[element]['max_depth']
-        elif elements[element]['type'] == 'orifice':
-            elements[element]['max_depth'] = orifices[element]['geom1']
         elif elements[element]['type'] == 'orifice':
             elements[element]['max_depth'] = orifices[element]['geom1']
         else:

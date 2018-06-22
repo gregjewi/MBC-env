@@ -1,106 +1,130 @@
-testing_CC_FV_FREUD.p,GDRSS_25YR24HR.inp,TRUE,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1,9,215,0,"GDRSS 25yr 24hr, CC FV FREUD"
-orifice_qaqc.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1,9,215,0,qa qc orifice equations
-orifice_qaqc_1.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1,9,215,0,"qa qc orifice equations, 30 min timestep"
-orifice_qaqc_2.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1,9,215,0,"qa qc orifice equations, 30 min timestep"
-orifice_qaqc_3.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1,34,20,0,"qa qc orifice equations, 30 min timestep",,,
-orifice_qaqc_3.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1,34,20,0,"qa qc orifice equations, 30 min timestep",,,
-orifice_qaqc_4.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1,34,20,0,"qa qc orifice equations, 900 sec time step",,,
-orifice_qaqc_5.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1,34,20,0,"equal weights, 900 sec time step",,,
-orifice_qaqc_5.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1,34,20,0,"equal weights, 900 sec time step",,,
-orifice_qaqc_6.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1,34,10,0,"lower weight on forebay, 900 sec time step",,,
-orifice_qaqc_7.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1,34,5,0,"setpoint 5 lower weight on forebay, 900 sec time step",,,
-orifice_qaqc_8.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34,5,0,"setpoint 5 lower weight on forebay, 900 sec time step",,,
-orifice_qaqc_9.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1,34,5,0,"setpoint 5 lower weight on forebay, 90 sec time step",,,
-orifice_qaqc_9.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1,34,5,0,"setpoint 5 lower weight on forebay, 90 sec time step",,,
-orifice_qaqc_10.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34,5,0,"setpoint 5 lower weight on forebay, 10 sec time step",,,
-orifice_qaqc_11.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34,15,0,"setpoint 15 lower weight on forebay, 10 sec time step",,,
-orifice_qaqc_11.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34,15,0,"setpoint 15 lower weight on forebay, 10 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34,15,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34,0.3,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,1,1,PUMP34@5010-5009,1,1,2909,1,0,no max flow,34,0.3,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,1,1,PUMP34@5010-5009,1,1,2909,1,0,no max flow,34,0.3,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,1,1,PUMP34@5010-5009,1,1,2909,1,0,no max flow,34,0.3,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,1,1,PUMP34@5010-5009,1,1,2909,0,0,no max flow,34,0.3,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0,0,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,0,no max flow,34,1,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,0,no max flow,34,1,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.5,0.5,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,0,no max flow,34,0.5,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.2,0.2,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,0,no max flow,34,0.35,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.2,0.2,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,0,no max flow,34,1,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.2,0.2,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,0,no max flow,34,0.1,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.2,0.2,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,100,no max flow,34,0.1,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,1000,no max flow,34,0.25,0,"setpoint 15 lower weight on forebay, 15 sec time step",,,
-orifice_qaqc_12.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,0,0,PUMP34@5010-5009,0,0,2909,0,1000,no max flow,34,0.25,0,"setpoint 0.25, 30 sec time step, playing with set points a lot",,,
-orifice_qaqc_13.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,0.1,0.1,PUMP34@5010-5009,0.1,0.1,2909,0,1000,no max flow,34,0.25,0,"setpoint 0.25, 30 sec time step, playing with set points a lot",,,
-orifice_qaqc_14.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,0.1,0.1,PUMP34@5010-5009,0.1,0.1,2909,0,1000,no max flow,34,0.25,0,"1/2 rain event, playing with set points a lot",,,
-orifice_qaqc_15.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,0.1,0.1,PUMP34@5010-5009,0.1,0.1,2909,0,1000,no max flow,34,0.25,0,Changed to further upstream point for CC forebay,,,
-orifice_qaqc_15.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,0.1,0.1,PUMP44@5220-5219,0.1,0.1,PUMP34@5010-5009,0.1,0.1,2909,0,1000,no max flow,34,0.5,0,Changed upstream link for CC forebay,,,
-orifice_qaqc_16.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,1,1,PUMP34@5010-5009,1,1,2909,0,1000,no max flow,34,0.5,0,Changed upstream link for CC forebay,,,
-orifice_qaqc_17.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,1,1,PUMP34@5010-5009,1,1,2909,0,500,no max flow,34,0.5,0,Changed upstream link for CC forebay,,,
-orifice_qaqc_17.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,1,1,PUMP34@5010-5009,1,1,2909,0,500,no max flow,34,0.5,0,Changed upstream link for CC forebay,,,
-orifice_qaqc_18.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,0,500,no max flow,34,0.5,0,Changed upstream link for CC forebay,,,
-orifice_qaqc_19.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,0,500,no max flow,34,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps.",,,
-orifice_qaqc_20.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,2,2,PUMP44@5220-5219,2,2,PUMP34@5010-5009,10,10,2909,0,500,no max flow,34,0.25,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps.",,,
-orifice_qaqc_21.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,2,2,PUMP44@5220-5219,2,2,PUMP34@5010-5009,10,10,2909,0,500,no max flow,34,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps.",,,
-orifice_qaqc_21.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,2,2,PUMP44@5220-5219,2,2,PUMP34@5010-5009,10,10,2909,0,500,no max flow,34,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps.",,,
-orifice_qaqc_22.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,0,500,no max flow,34,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps.",,,
-orifice_qaqc_23.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,0,250,no max flow,34,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps.",,,
-orifice_qaqc_24.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,0,250,no max flow,34,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps.",,,
-orifice_qaqc_25.p,NoWestside_withISDs_RainEvents.inp,TRUE,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,0,50,no max flow,34,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps. Longer day",,,
-orifice_qaqc_26.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,10,10,2909,0,25,no max flow,34.0,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps. Longer day"
-orifice_qaqc_27.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,10,10,2909,0,19,no max flow,34.0,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps. Longer day"
-orifice_qaqc_27.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,10,10,2909,0,19,no max flow,34.0,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps. Longer day"
-orifice_qaqc_28.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,100,100,2909,0,10,no max flow,34.0,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps. Longer day"
-orifice_qaqc_29.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,100,100,2909,0,25,no max flow,34.0,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps. Longer day"
-orifice_qaqc_30.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,100,100,2909,0,0.0,no max flow,34.0,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps. Longer day"
-orifice_qaqc_31.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,100,100,2909,0,10.0,no max flow,34.0,0.5,0,"Orifice outlet from CC RTB set at 0.0, ie no discharge to pumps. Longer day"
-orifice_qaqc_31.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.0,0.0,PUMP44@5220-5219,0.0,0.0,PUMP34@5010-5009,0.0,0.0,2909,0,10.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_32.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.0,0.0,PUMP44@5220-5219,0.0,0.0,PUMP34@5010-5009,0.0,0.0,2909,0,10.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_32.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.0,0.0,PUMP44@5220-5219,0.0,0.0,PUMP34@5010-5009,0.0,0.0,2909,0,10.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_33.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.0,0.0,PUMP44@5220-5219,0.0,0.0,PUMP34@5010-5009,0.0,0.0,2909,0,10.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_33.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,10.0,10.0,2909,0,10.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_34.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,10.0,10.0,2909,0,2.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_34.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,10.0,10.0,2909,0,2.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,2.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,2.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,2.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,2.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,1.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,1.0,no max flow,34.0,0.5,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,1.0,no max flow,34.0,1.0,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,1.0,no max flow,34.0,1.0,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,1.0,no max flow,34.0,1.0,0,0 price upstream
-orifice_qaqc_35.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,1.0,no max flow,34.0,1.0,0,0 price upstream
-orifice_qaqc_36.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,1.0,no max flow,34.0,1.0,0,0 price upstream
-orifice_qaqc_36.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,0.1,no max flow,34.0,1.0,0,2 inch rain event
-orifice_qaqc_36.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,0.1,no max flow,34.0,0.5,0,2 inch rain event
-orifice_qaqc_36.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.5,0,2 inch rain event
-orifice_qaqc_36.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.5,0,2 inch rain event
-orifice_qaqc_36.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.5,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.02,0.02,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,50.0,50.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_37.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,50,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_38.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,50.0,50.0,PUMP34@5010-5009,50.0,50.0,2909,0,5.0,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_39.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,24.0,24.0,2909,0,5.0,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_40.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,7.5,7.5,PUMP34@5010-5009,24.0,24.0,2909,0,5.0,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_41.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,7.5,7.5,PUMP34@5010-5009,24.0,24.0,2909,0,25.0,no max flow,34.0,0.4,0,2 inch rain event
-orifice_qaqc_42.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,7.5,7.5,PUMP34@5010-5009,24.0,24.0,2909,0,250.0,no max flow,34.0,1.0,0,"1/2 inch rain event, trying to get ds setpoint."
-orifice_qaqc_43.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,7.5,7.5,PUMP34@5010-5009,24.0,24.0,2909,0,250.0,no max flow,34.0,1.0,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_45.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,0.75,0.75,PUMP34@5010-5009,0.25,0.25,2909,0,250.0,no max flow,34.0,1.0,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_46.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,0.75,0.75,PUMP34@5010-5009,0.25,0.25,2909,0,250.0,no max flow,34.0,0.5,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_47.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,0.75,0.75,PUMP34@5010-5009,0.25,0.25,2909,0,250.0,no max flow,34.0,0.5,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_48.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,0.75,0.75,PUMP34@5010-5009,0.25,0.25,2909,0,50.0,no max flow,34.0,0.5,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_49.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,0.75,0.75,PUMP34@5010-5009,0.25,0.25,2909,0,5.0,no max flow,34.0,0.5,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_50.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,3.0,3.0,PUMP44@5220-5219,0.75,0.75,PUMP34@5010-5009,0.25,0.25,2909,0,5.0,no max flow,34.0,0.5,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_51.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1.0,1.0,PUMP44@5220-5219,1.0,1.0,PUMP34@5010-5009,1.0,1.0,2909,0,1.0,no max flow,34.0,0.5,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_52.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1.0,1.0,PUMP44@5220-5219,1.0,1.0,PUMP34@5010-5009,1.0,1.0,2909,0,10.0,no max flow,34.0,0.5,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_53.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.1,0.1,PUMP44@5220-5219,1.0,1.0,PUMP34@5010-5009,1.0,1.0,2909,0,10.0,no max flow,34.0,0.5,0,"1/2 inch rain event, trying to get ds setpoint. With orifice opening level set at 11 ft."
-orifice_qaqc_54.p,GDRSS_25YR24HR.inp,False,ORIFICE33@17312-17313,0.1,0.1,PUMP44@5220-5219,1.0,1.0,PUMP34@5010-5009,1.0,1.0,2909,0,10.0,no max flow,34.0,0.5,0,No Control -- Full GDRSS
-orifice_qaqc_54.p,NoWestside_withISDs_RainEvents_GDRSS_CONTROLS.inp,False,ORIFICE33@17312-17313,0.1,0.1,PUMP44@5220-5219,1.0,1.0,PUMP34@5010-5009,1.0,1.0,2909,0,10.0,no max flow,34.0,0.5,0,No Control -- Full GDRSS
-orifice_qaqc_55.p,NoWestside_withISDs_RainEvents_GDRSS_CONTROLS.inp,False,ORIFICE33@17312-17313,0.1,0.1,PUMP44@5220-5219,1.0,1.0,PUMP34@5010-5009,1.0,1.0,2909,0,10.0,no max flow,34.0,0.5,0,No Control -- Full GDRSS
+testing_CC_FV_FREUD.p,GDRSS_25YR24HR.inp,True,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1.0,9.0,215,0,"GDRSS 25yr 24hr, CC FV FREUD"
+orifice_qaqc.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1.0,9.0,215,0,qa qc orifice equations
+orifice_qaqc_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1.0,9.0,215,0,"qa qc orifice equations, 30 min timestep"
+orifice_qaqc_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,1,PUMP38@2999-5007,10,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,1715,10,0,1.0,9.0,215,0,"qa qc orifice equations, 30 min timestep"
+orifice_qaqc_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1.0,34.0,20,0,"qa qc orifice equations, 30 min timestep"
+orifice_qaqc_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1.0,34.0,20,0,"qa qc orifice equations, 30 min timestep"
+orifice_qaqc_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,100,1,PUMP44@5220-5219,100,1,PUMP34@5010-5009,100,1,2909,100,0,1.0,34.0,20,0,"qa qc orifice equations, 900 sec time step"
+orifice_qaqc_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1.0,34.0,20,0,"equal weights, 900 sec time step"
+orifice_qaqc_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1.0,34.0,20,0,"equal weights, 900 sec time step"
+orifice_qaqc_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1.0,34.0,10,0,"lower weight on forebay, 900 sec time step"
+orifice_qaqc_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,1.0,34.0,5,0,"setpoint 5 lower weight on forebay, 900 sec time step"
+orifice_qaqc_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34.0,5,0,Rework after laptop repair
+NoControl.p,NoWestside_withISDs_RainEvents_NoControl.inp,False,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34.0,5,0,Rework after laptop repair
+NoControl_half_inch.p,NoWestside_withISDs_RainEvents_NoControl.inp,False,ORIFICE33@17312-17313,1,10,PUMP44@5220-5219,10,10,PUMP34@5010-5009,10,10,2909,10,0,no max flow,34.0,5,0,"Rework after laptop repair, half inch"
+Control_half_inch_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.2,0.2,PUMP44@5220-5219,2.0,2.0,PUMP34@5010-5009,2.0,2.0,2909,1.0,1.0,no max flow,22.0,5,0,"Rework after laptop repair, half inch"
+Control_half_inch_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.2,0.2,PUMP44@5220-5219,2.0,2.0,PUMP34@5010-5009,2.0,2.0,2909,100.0,100.0,no max flow,22.0,5,0,"Rework after laptop repair, half inch"
+Control_half_inch_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.2,0.2,PUMP44@5220-5219,2.0,2.0,PUMP34@5010-5009,2.0,2.0,2909,10.0,10.0,no max flow,22.0,5,0,"Rework after laptop repair, half inch"
+Control_half_inch_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,2.0,2.0,PUMP44@5220-5219,2.0,2.0,PUMP34@5010-5009,2.0,2.0,2909,2.0,2.0,no max flow,22.0,5,0,"Rework after laptop repair, half inch"
+Control_half_inch_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,10.0,10.0,PUMP34@5010-5009,10.0,10.0,2909,2.0,2.0,no max flow,22.0,5,0,"Rework after laptop repair, half inch"
+Control_half_inch_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,10.0,10.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,10.0,10.0,2909,2.0,0.0,no max flow,22.0,5,0,"Rework after laptop repair, half inch"
+Control_half_inch_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.0,0.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,12.0,12.0,2909,2.0,0.0,no max flow,22.0,5,0,"Rework after laptop repair, half inch"
+Control_half_inch_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,0.0,0.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,12.0,12.0,2909,2.0,0.0,no max flow,22.0,0.6,0,"Rework after laptop repair, half inch"
+Control_half_inch_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,5.0,5.0,2909,2.0,0.0,no max flow,22.0,0.6,0,"Rework after laptop repair, half inch"
+Control_half_inch_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,5.0,5.0,2909,20.0,0.0,no max flow,22.0,0.8,0,"Rework after laptop repair, half inch"
+Control_half_inch_10.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,5.0,5.0,2909,10.0,0.0,no max flow,22.0,0.8,0,"Rework after laptop repair, half inch"
+Control_half_inch_10.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,5.0,5.0,2909,10.0,0.0,no max flow,22.0,0.8,0,forebay closed
+Control_half_inch_10.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,5.0,5.0,2909,10.0,0.0,no max flow,22.0,0.8,0,1 inch
+Control_half_inch_11.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,5.0,PUMP44@5220-5219,5.0,5.0,PUMP34@5010-5009,5.0,5.0,2909,7.0,0.0,no max flow,22.0,0.7,0,1 inch
+Control_half_inch_11.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,5.0,2.0,PUMP44@5220-5219,5.0,2.0,PUMP34@5010-5009,5.0,2.0,2909,7.0,0.0,no max flow,22.0,0.7,0,1 inch
+one_inch_0_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 0
+one_inch_0_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 1
+one_inch_0_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 2
+one_inch_0_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 3
+one_inch_0_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 4
+one_inch_0_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 5
+one_inch_0_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 6
+one_inch_0_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 7
+one_inch_0_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 8
+one_inch_0_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,0,PUMP44@5220-5219,10,0,PUMP34@5010-5009,10,0,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:0 b: 9
+one_inch_1_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 0
+one_inch_1_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 1
+one_inch_1_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 2
+one_inch_1_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 3
+one_inch_1_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 4
+one_inch_1_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 5
+one_inch_1_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 6
+one_inch_1_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 7
+one_inch_1_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 8
+one_inch_1_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,1,PUMP44@5220-5219,10,1,PUMP34@5010-5009,10,1,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:1 b: 9
+one_inch_2_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 0
+one_inch_2_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 1
+one_inch_2_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 2
+one_inch_2_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 3
+one_inch_2_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 4
+one_inch_2_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 5
+one_inch_2_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 6
+one_inch_2_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 7
+one_inch_2_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 8
+one_inch_2_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,2,PUMP44@5220-5219,10,2,PUMP34@5010-5009,10,2,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:2 b: 9
+one_inch_3_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 0
+one_inch_3_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 1
+one_inch_3_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 2
+one_inch_3_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 3
+one_inch_3_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 4
+one_inch_3_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 5
+one_inch_3_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 6
+one_inch_3_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 7
+one_inch_3_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 8
+one_inch_3_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,3,PUMP44@5220-5219,10,3,PUMP34@5010-5009,10,3,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:3 b: 9
+one_inch_4_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 0
+one_inch_4_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 1
+one_inch_4_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 2
+one_inch_4_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 3
+one_inch_4_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 4
+one_inch_4_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 5
+one_inch_4_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 6
+one_inch_4_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 7
+one_inch_4_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 8
+one_inch_4_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,4,PUMP44@5220-5219,10,4,PUMP34@5010-5009,10,4,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:4 b: 9
+one_inch_5_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 0
+one_inch_5_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 1
+one_inch_5_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 2
+one_inch_5_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 3
+one_inch_5_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 4
+one_inch_5_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 5
+one_inch_5_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 6
+one_inch_5_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 7
+one_inch_5_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 8
+one_inch_5_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,5,PUMP44@5220-5219,10,5,PUMP34@5010-5009,10,5,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:5 b: 9
+one_inch_6_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 0
+one_inch_6_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 1
+one_inch_6_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 2
+one_inch_6_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 3
+one_inch_6_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 4
+one_inch_6_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 5
+one_inch_6_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 6
+one_inch_6_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 7
+one_inch_6_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 8
+one_inch_6_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,6,PUMP44@5220-5219,10,6,PUMP34@5010-5009,10,6,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:6 b: 9
+one_inch_7_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 0
+one_inch_7_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 1
+one_inch_7_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 2
+one_inch_7_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 3
+one_inch_7_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 4
+one_inch_7_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 5
+one_inch_7_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 6
+one_inch_7_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 7
+one_inch_7_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 8
+one_inch_7_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,7,PUMP44@5220-5219,10,7,PUMP34@5010-5009,10,7,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:7 b: 9
+one_inch_8_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 0
+one_inch_8_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 1
+one_inch_8_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 2
+one_inch_8_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 3
+one_inch_8_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 4
+one_inch_8_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 5
+one_inch_8_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 6
+one_inch_8_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 7
+one_inch_8_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 8
+one_inch_8_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,8,PUMP44@5220-5219,10,8,PUMP34@5010-5009,10,8,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:8 b: 9
+one_inch_9_0.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,0,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 0
+one_inch_9_1.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,1,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 1
+one_inch_9_2.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,2,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 2
+one_inch_9_3.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,3,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 3
+one_inch_9_4.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,4,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 4
+one_inch_9_5.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,5,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 5
+one_inch_9_6.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,6,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 6
+one_inch_9_7.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,7,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 7
+one_inch_9_8.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,8,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 8
+one_inch_9_9.p,NoWestside_withISDs_RainEvents.inp,True,ORIFICE33@17312-17313,1,9,PUMP44@5220-5219,10,9,PUMP34@5010-5009,10,9,2909,9,0.0,no max flow,22.0,0.8,0,for loops a:9 b: 9
+NoControl_one_inch.p,NoWestside_withISDs_RainEvents_NoControl.inp,False,ORIFICE33@17312-17313,1,2.0,PUMP44@5220-5219,10,2.0,PUMP34@5010-5009,10,2.0,2909,7.0,0.0,no max flow,22.0,0.7,0,"1 inch, no control"
