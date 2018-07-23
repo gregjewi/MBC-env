@@ -76,8 +76,19 @@ def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes
     # Send dictionary of control points. "Output" is changing the 'action', meaning target_setting.
     get_target_setting(controlDict,nodes, units)
     
+    # check if any upstream locations are above flooding criteria
+    check_flooding_elevations(controlDict,upstreamDict)
+    
     price.append(p)
     PDemand.append(PD)
+    
+def check_flooding_elevations(controlDict,upstreamDict):
+    for i,j in zip(upstreamDict,controlDict):
+        if upstreamDict[i]['ts_el'][-1] > upstreamDict[i]['flood_el']:
+            controlDict[j]['pyswmmVar'].target_setting = 1.0
+            print(i + " above flood elevation")
+        else:
+            pass
 
 def get_target_setting(controlDict, nodes, units):
     # do something to calculate target setting for each orifice/pump
@@ -237,8 +248,8 @@ def get_group(group,controlDict,upstreamDict,downstreamDict):
     dsKeys = list(D_fill.keys())
     
     return C_fill,U_fill,D_fill,dsKeys
-        
-def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,performanceDict,timestep):
+            
+def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmINP,performanceDict,timestep,offset):
     with Simulation(swmmINP) as sim:
         units = sim.system_units
         price = []
@@ -246,6 +257,10 @@ def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmI
         
         nodes = Nodes(sim)
         links = Links(sim)
+        
+        # Convert the elevations of all nodes to any datum you'd like.
+        for node in nodes:
+            node.invert_elevation = node.invert_elevation + offset
         
         groups = max([controlDict[i]['group'] for i in controlDict])
         
@@ -284,6 +299,17 @@ def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmI
             # append measures to timeseries for each upstream and downstream location
             for point in upstreamDict:
                 upstreamDict[point]['ts'].append(upstreamDict[point]['pyswmmVar'].depth / upstreamDict[point]['max_depth'])
+                
+                try:
+                    # if node
+                    elev = upstreamDict[point]['pyswmmVar'].depth + upstreamDict[point]['pyswmmVar'].invert_elevation
+                except:
+                    # if link
+                    # elevation = nodes[link.inlet_node].invert_elevation + nodes[link.inlet_node].depth
+                    elev = nodes[upstreamDict[point]['pyswmmVar'].inlet_node].invert_elevation + nodes[upstreamDict[point]['pyswmmVar'].inlet_node].depth
+                  
+                upstreamDict[point]['ts_el'].append(elev)
+                
             for point in downstreamDict:
                 try:
                     # if link
