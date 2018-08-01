@@ -7682,7 +7682,7 @@ ISDDR02_DOWN     1925             19202            SIDE         0          1    
 ISDDR02_UP       1925             19201            SIDE         0          1          NO       0         
 ORIFICE19@19401-19400 19401            19400            SIDE         0.000000   1.000000   NO       0.500000  
 ;Conner Basin
-ORIFICE22@2909-2999 2909             2999             SIDE         0.000000   0.0        NO       0.010000  
+ORIFICE22@2909-2999 2909             2999             SIDE         0.000000   1.0        NO       0.010000  
 ;Baby Creek VR-7
 ORIFICE26@1791-1789 1791             1789             SIDE         0.000000   1.000000   NO       0.010000  
 ;St. Aubin
@@ -13953,6 +13953,7 @@ RULE PUMP83B
 IF NODE 11600 DEPTH < 24.000000
 THEN PUMP PUMP83@11600-11601 STATUS = OFF
 PRIORITY 2.000000
+
 
 [INFLOWS]
 ;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern

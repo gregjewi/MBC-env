@@ -7552,11 +7552,11 @@ PUMP37@5010-5009 5010             5009             DUMMY            OFF      0.0
 ;*Conner Basin Dewatering Pump
 PUMP38@2999-5007 2999             5007             CC_RTB           ON       0.000000 0.000000
 ;*Conner Basin Dewatering Pump
-PUMP39@2999-5007 2999             5007             DUMMY            OFF      0.000000 0.000000
+PUMP39@2999-5007 2999             5007             DUMMY            ON       0.000000 0.000000
 ;*Conner Basin Dewatering Pump
-PUMP40@2999-5007 2999             5007             DUMMY            OFF      0.000000 0.000000
+PUMP40@2999-5007 2999             5007             DUMMY            ON       0.000000 0.000000
 ;*Conner Basin Dewatering Pump
-PUMP41@2999-5007 2999             5007             DUMMY            OFF      0.000000 0.000000
+PUMP41@2999-5007 2999             5007             DUMMY            ON       0.000000 0.000000
 ;*******Edited: 6/01 WT tg Added Basin Dewatering Pumps (2
 ;ft difference was selected arbitrariliy to simulate staggered operation)
 PUMP42@5220-5106 5220             5106             DUMMY            OFF      0.000000 0.000000
@@ -7678,8 +7678,8 @@ ISD013_UP        2355             23553            SIDE         0          1.0  
 ISDDR02_DOWN     1925             19202            SIDE         0          1          NO       0         
 ISDDR02_UP       1925             19201            SIDE         0          1          NO       0         
 ORIFICE19@19401-19400 19401            19400            SIDE         0.000000   1.000000   NO       0.500000  
-;Conner Basin
-ORIFICE22@2909-2999 2909             2999             SIDE         0.000000   1.000000   NO       0.010000  
+;Conner Basin, Originally circular orifice or D=1.9549 ft. Changed to square with L,W = 1.732 ft
+ORIFICE22@2909-2999 2909             2999             SIDE         0.000000   1.000000   NO       0.0       
 ;Baby Creek VR-7
 ORIFICE26@1791-1789 1791             1789             SIDE         0.000000   1.000000   NO       0.010000  
 ;St. Aubin
@@ -10545,7 +10545,7 @@ ISD013_UP        CIRCULAR     8                0          0          0
 ISDDR02_DOWN     CIRCULAR     10.5             0          0          0
 ISDDR02_UP       CIRCULAR     10.5             0          0          0
 ORIFICE19@19401-19400 CIRCULAR     8.000000         0          0          0
-ORIFICE22@2909-2999 CIRCULAR     1.954900         0          0          0
+ORIFICE22@2909-2999 RECT_CLOSED  1.732            1.732      0          0
 ORIFICE26@1791-1789 CIRCULAR     5.245560         0          0          0
 ORIFICE27@16441-16447 CIRCULAR     0.618200         0          0          0
 ORIFICE28@1667-2703 CIRCULAR     4.514660         0          0          0
@@ -13458,14 +13458,6 @@ RULE ORIFICE19B
 IF NODE 10251 DEPTH <= 9.000000
 THEN ORIFICE ORIFICE19@19401-19400 SETTING = 1.000000
 PRIORITY 2.000000
-RULE ORIFICE22A
-IF NODE 1725 DEPTH > 7.400000
-THEN ORIFICE ORIFICE22@2909-2999 SETTING = 0.000000
-PRIORITY 1.000000
-RULE ORIFICE22B
-IF NODE 1725 DEPTH <= 7.200000
-THEN ORIFICE ORIFICE22@2909-2999 SETTING = 1.000000
-PRIORITY 2.000000
 RULE ORIFICE26A
 IF NODE 1776 DEPTH > 10.200000
 THEN ORIFICE ORIFICE26@1791-1789 SETTING = 0.000000
@@ -13569,14 +13561,6 @@ PRIORITY 1.000000
 RULE ORIFICE40B
 IF NODE 8010 DEPTH <= 25.000000
 THEN ORIFICE ORIFICE40@8205-8103 SETTING = 1.000000
-PRIORITY 2.000000
-RULE PUMP13A
-IF NODE 1700 DEPTH >= 5.000000
-THEN PUMP PUMP13@1700-1695 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP13B
-IF NODE 1700 DEPTH < 3.000000
-THEN PUMP PUMP13@1700-1695 STATUS = OFF
 PRIORITY 2.000000
 RULE PUMP14A
 IF NODE 1000 DEPTH >= 6.000000
@@ -30349,7 +30333,7 @@ RC92053          13449906.096       375804.295
 169010           13495066.248       321492.968        
 169020           13493023.411       325392.675        
 1695             13498019.427       314480.083        
-1700             13498097.930       314488.633        
+1700             13498098.523       314491.637        
 1710             13497070.938       316160.287        
 1725             13502999.771       320085.178        
 1731             13503297.480       319720.154        

@@ -5,10 +5,10 @@ import pickle
 import csv
 import matplotlib.pyplot as plt
 import winsound
+import time
 
-def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes,timestep,units):
+def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes,timestep,units,offset):
     
-    # These currently don't change per timestep. That is a possibility though
     setpts = np.array([downstreamDict[dsKeys[0]]['set_point'],downstreamDict[dsKeys[0]]['set_derivative']])
     dparam = [downstreamDict[dsKeys[0]]['epsilon'],downstreamDict[dsKeys[0]]['gamma']]
     uparam = np.array([upstreamDict[i]['uparam'] for i in upstreamDict])
@@ -38,7 +38,8 @@ def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes
     
     
     # Set pareto optimal price
-    p = (sum(uparam*ustream) + sum(dparam*(setpts-dstream)))/(1 + n_tanks)
+    # p = (sum(uparam*ustream) - sum(dparam*(setpts-dstream)))/(1 + n_tanks)
+    p = (sum(uparam*ustream) + sum(dparam*(-setpts+dstream)))/(1 + n_tanks)
 
     # Initialize demand array holder
     PD = np.zeros(n_tanks)
@@ -77,16 +78,22 @@ def new_fnctn(upstreamDict,downstreamDict,controlDict,dsKeys,price,PDemand,nodes
     get_target_setting(controlDict,nodes, units)
     
     # check if any upstream locations are above flooding criteria
-    check_flooding_elevations(controlDict,upstreamDict)
+    act = True # Make changes to control setting?
+    check_flooding_elevations(controlDict,upstreamDict,offset,act)
     
     price.append(p)
     PDemand.append(PD)
     
-def check_flooding_elevations(controlDict,upstreamDict):
+def check_flooding_elevations(controlDict,upstreamDict,offset, act):
     for i,j in zip(upstreamDict,controlDict):
-        if upstreamDict[i]['ts_el'][-1] > upstreamDict[i]['flood_el']:
-            controlDict[j]['pyswmmVar'].target_setting = 1.0
-            print(i + " above flood elevation")
+        if upstreamDict[i]['ts_el'][-1] + offset > upstreamDict[i]['flood_el']:
+            # controlDict[j]['pyswmmVar'].target_setting = 1.0
+            # print(i + " above flood elevation")
+            print(i,'current el: ',str(upstreamDict[i]['ts_el'][-1] + offset), 'flood el: ', upstreamDict[i]['flood_el'])
+            
+            if act:
+                controlDict[j]['pyswmmVar'].target_setting = 1.0
+                
         else:
             pass
 
@@ -190,7 +197,29 @@ def get_target_setting(controlDict, nodes, units):
                 print(i, 'Pump type 1...')
 
             elif controlDict[i]['curve_info']['type'] == 'PUMP2':
-                print(i, 'Pump type 2...')
+                # print(i, 'Pump type 2...')
+                # q_out is a function of depth in wet well.
+                
+                # get q_full from depth
+                depth = upstream.depth
+                
+                q_full = 0.0
+                
+                n = len(controlDict[i]['curve_info']['x_val'])
+                for  l in range(n-1,-1,-1):
+                    # first index in the list. Can't find negative index.
+                    if l  == 0:
+                        if depth < float(controlDict[i]['curve_info']['x_val'][l]):
+                            q_full = float(controlDict[i]['curve_info']['y_val'][l])
+
+                    else:
+                        if depth < float(controlDict[i]['curve_info']['x_val'][l]) and depth > float(controlDict[i]['curve_info']['x_val'][l-1]):
+                            q_full = float(controlDict[i]['curve_info']['y_val'][l])
+                
+                if controlDict[i]['q_goal'] == 0.0:
+                    controlDict[i]['action'] = 0.0
+                else:
+                    controlDict[i]['action'] = controlDict[i]['q_goal'] / q_full            
 
             elif controlDict[i]['curve_info']['type'] == 'PUMP3':
                 head = h2 - h1 # pump pushes water from low head (h1) to higher head (h2)
@@ -219,7 +248,12 @@ def get_target_setting(controlDict, nodes, units):
 
             elif controlDict[i]['curve_info']['type'] == 'PUMP4':
                 print(i, 'Pump type 4...')
-        
+            
+            # Should probably put this on this level instead of repeating within each pump type:
+            # if controlDict[i]['q_goal'] == 0.0:
+            #         controlDict[i]['action'] = 0.0
+            #     else:
+            #         controlDict[i]['action'] = controlDict[i]['q_goal'] / q_full  
         
         # if target setting greater than 1, only open to 1.
         controlDict[i]['action'] = min(max(controlDict[i]['action'],0.0),1.0)
@@ -258,9 +292,6 @@ def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmI
         nodes = Nodes(sim)
         links = Links(sim)
         
-        # Convert the elevations of all nodes to any datum you'd like.
-        for node in nodes:
-            node.invert_elevation = node.invert_elevation + offset
         
         groups = max([controlDict[i]['group'] for i in controlDict])
         
@@ -269,14 +300,15 @@ def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmI
         for point in controlDict:
             controlDict[point]['pyswmmVar'] = links[point]
         for point in upstreamDict:
-            try:
+            if upstreamDict[point]['type'] == 'link':
                 upstreamDict[point]['pyswmmVar'] = links[point]
-            except:
+            elif upstreamDict[point]['type'] == 'storage' or upstreamDict[point]['type'] == 'junction':
                 upstreamDict[point]['pyswmmVar'] = nodes[point]
+            
         for point in downstreamDict:
             if downstreamDict[point]['type'] == 'link':
                 downstreamDict[point]['pyswmmVar'] = links[point]
-            if downstreamDict[point]['type'] == 'storage':
+            elif downstreamDict[point]['type'] == 'storage' or downstreamDict[point]['type'] == 'junction':
                 downstreamDict[point]['pyswmmVar'] = nodes[point]
         
         # Initialize pyswmm variables for variables associated with performance metrics.
@@ -285,7 +317,7 @@ def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmI
             if performanceDict[point]['type'] == 'outfall' or performanceDict[point]['type'] == 'junction' or performanceDict[point]['type'] == 'storage':
                 performanceDict[point]['pyswmmVar'] = nodes[point]
             # IF link
-            elif performanceDict[point]['type'] == 'link' or performanceDict[point]['type'] == 'orifice':
+            elif performanceDict[point]['type'] == 'link' or performanceDict[point]['type'] == 'orifice' or performanceDict[point]['type'] == 'pump':
                 performanceDict[point]['pyswmmVar'] = links[point]
             else:
                 pass
@@ -299,16 +331,16 @@ def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmI
             # append measures to timeseries for each upstream and downstream location
             for point in upstreamDict:
                 upstreamDict[point]['ts'].append(upstreamDict[point]['pyswmmVar'].depth / upstreamDict[point]['max_depth'])
-                
+                    
                 try:
+                    # if link
+                    elev = nodes[upstreamDict[point]['pyswmmVar'].inlet_node].invert_elevation + nodes[upstreamDict[point]['pyswmmVar'].inlet_node].depth
+                except:
                     # if node
                     elev = upstreamDict[point]['pyswmmVar'].depth + upstreamDict[point]['pyswmmVar'].invert_elevation
-                except:
-                    # if link
-                    # elevation = nodes[link.inlet_node].invert_elevation + nodes[link.inlet_node].depth
-                    elev = nodes[upstreamDict[point]['pyswmmVar'].inlet_node].invert_elevation + nodes[upstreamDict[point]['pyswmmVar'].inlet_node].depth
-                  
+            
                 upstreamDict[point]['ts_el'].append(elev)
+                
                 
             for point in downstreamDict:
                 try:
@@ -318,7 +350,8 @@ def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmI
                 except: 
                     # if node
                     downstreamDict[point]['ts_depth'].append(downstreamDict[point]['pyswmmVar'].depth / downstreamDict[point]['max_depth'])
-            
+                
+           
             # append measures to timeseries for performance metric locations
             for point in performanceDict:
                 # print(point)
@@ -335,7 +368,7 @@ def run_control_sim(control,controlDict,upstreamDict,downstreamDict,dsKeys,swmmI
                 
                 for group in range(1,groups+1):
                     C_fill,U_fill,D_fill,dsKeys = get_group(group,controlDict,upstreamDict,downstreamDict)
-                    new_fnctn(U_fill,D_fill,C_fill,dsKeys,price, PDemand, nodes, timestep, units)
+                    new_fnctn(U_fill,D_fill,C_fill,dsKeys,price, PDemand, nodes, timestep, units,offset)
                 
                 # new_fnctn(upstreamDict, downstreamDict, controlDict, dsKeys, price, PDemand, nodes, timestep, units)
                 
@@ -396,9 +429,35 @@ def viz_shit(f_nocontrol,f_control,figname, save, control):
     with open(f_control,'rb') as fC, open(f_nocontrol,'rb') as fNC:
         data_control = pickle.load(fC)
         data_nocontrol = pickle.load(fNC)
+    
+    try:
+        altogether_now(data_control,data_nocontrol,figname, save, control)
+    except:
+        pass
+    
+    try:
+        make_market_figs(data_control,data_nocontrol,figname,save,control)
+    except:
+        pass
+    
+    try:
+        conner_creek_flow(data_control,data_nocontrol)
+    except:
+        pass
+    
+    try:
+        price_plot(data_control)
+    except:
+        pass
+    
+    # altogether_now(data_control,data_nocontrol,figname, save, control)
+    # make_market_figs(data_control,data_nocontrol,figname,save,control)
+    # conner_creek_flow(data_control,data_nocontrol)
+    # price_plot(data_control)
 
+    
+def altogether_now(data_control,data_nocontrol,figname, save, control):
     fig,axarr = plt.subplots(2,2, figsize=(20,15))
-
     # Plot Control Points onto the figures
     leg = []
     for p1,p2 in zip(data_control['upstreamDict'],data_nocontrol['upstreamDict']):
@@ -414,22 +473,25 @@ def viz_shit(f_nocontrol,f_control,figname, save, control):
     # make legend
     axarr[0,0].legend(leg,title = 'Solid = Control, Dashed = No Control', ncol=2)
     axarr[0,0].set_ylabel('Normalized Depth')
+    axarr[0,0].set_xlim([0,len(data_control['downstreamDict'][p1]['ts_depth'])])
     
     leg = []
     t = np.array([i for i in range(0,len(data_control['downstreamDict'][p1]['ts_depth']))])
     if control:
         for i in data_control['controlDict']:
-            axarr[1,0].scatter(t,data_control['controlDict'][i]['actionTS'])
+            axarr[1,0].scatter(t,data_control['controlDict'][i]['actionTS'],s=2)
             leg = leg + [data_control['controlDict'][i]['location']]
         axarr[1,0].set_ylabel('Action Setting')
         axarr[1,0].set_title('Actions at Control Points')
         axarr[1,0].legend(leg)
     
+    # axarr[1,0].set_xlim([0,len(t)])
     
     axarr[0,1].plot(data_control['performanceDict']['1002']['ts_flow'])
     axarr[0,1].plot(data_nocontrol['performanceDict']['1002']['ts_flow'],color='k',linestyle='--',linewidth=3)
     axarr[0,1].set_title('WWTP Inflow')
     axarr[0,1].set_ylabel('Flow [cfs]')
+    axarr[0,1].set_xlim([0,len(data_control['performanceDict']['1002']['ts_flow'])])
     
     axarr[0,1].plot(data_control['performanceDict']['2908']['ts_flow'])
     axarr[0,1].plot(data_nocontrol['performanceDict']['2908']['ts_flow'],linestyle='--',linewidth=3)
@@ -443,12 +505,12 @@ def viz_shit(f_nocontrol,f_control,figname, save, control):
     for i in data_control['upstreamDict']:
         axarr[1,1].plot(data_control['upstreamDict'][i]['PD'])
         leg = leg + [data_control['upstreamDict'][i]['location']]
-    axarr[1,1].plot(data_control['price'],color = 'k', linewidth = 3)
+    # axarr[1,1].plot(data_control['price'],color = 'k', linewidth = 3)
+    axarr[1,1].scatter([i for i in range(0,len(data_control['price']))],data_control['price'],s=2,color='k')
     leg = leg + ['Price']
     axarr[1,1].legend(leg,title = 'Downstream Price, Upstream Wealth')
     axarr[1,1].set_ylabel('Currency')
     axarr[1,1].set_title('The Market')
-    
     
     if save:
         plt.savefig(figname)
@@ -456,6 +518,112 @@ def viz_shit(f_nocontrol,f_control,figname, save, control):
     plt.show()
     plt.close()
     
+def make_market_figs(data_control,data_nocontrol,figname,save,control):
+    groups = max([data_control['controlDict'][i]['group'] for i in data_control['controlDict']])
+
+    for group in range(1,groups+1):
+        print(group)
+
+        C_fill,U_fill,D_fill,dsKeys = get_group(group,data_control['controlDict'],data_control['upstreamDict'],data_control['downstreamDict'])
+
+        # keys/model elements for this submarket
+        keys = [C_fill.keys(),U_fill.keys(),D_fill.keys()]
+
+        fig,axarr = plt.subplots(2,2, figsize=(20,15))
+
+
+        # PLOT 1: NORMALIZED DEPTH FOR UPSTREAM AND DOWNSTREAM LOCATIONS  
+        axarr[0,0].set_title('Normalized Depth at Points of Interest')
+        leg = []
+        for U in keys[1]:
+            axarr[0,0].plot(data_control['upstreamDict'][U]['ts'])
+            axarr[0,0].plot(data_nocontrol['upstreamDict'][U]['ts'],linestyle='--')
+            leg = leg + [data_control['upstreamDict'][U]['location'],data_nocontrol['upstreamDict'][U]['location']]
+
+        for D in keys[2]:
+            axarr[0,0].plot(data_control['downstreamDict'][D]['ts_depth'])
+            axarr[0,0].plot(data_nocontrol['downstreamDict'][D]['ts_depth'],color='k',linestyle='--')
+            leg = leg + [data_control['downstreamDict'][D]['location'],data_nocontrol['downstreamDict'][D]['location']]
+
+
+        axarr[0,0].legend(leg,title = 'Solid = Control, Dashed = No Control', ncol=2)
+        axarr[0,0].set_ylabel('Normalized Depth')
+        axarr[0,0].set_xlim([0,len(data_control['downstreamDict'][D]['ts_depth'])])
+
+
+        # PLOT 2: INFLOWS AND OVERFLOWS
+        axarr[0,1].set_title('Inflows and Overflows')
+        axarr[0,1].plot(data_control['performanceDict']['1002']['ts_flow'])
+        axarr[0,1].plot(data_nocontrol['performanceDict']['1002']['ts_flow'],color='k',linestyle='--',linewidth=3)
+        axarr[0,1].set_title('WWTP Inflow')
+        axarr[0,1].set_ylabel('Flow [cfs]')
+
+        axarr[0,1].plot(data_control['performanceDict']['2908']['ts_flow'])
+        axarr[0,1].plot(data_nocontrol['performanceDict']['2908']['ts_flow'],linestyle='--',linewidth=3)
+        leg = ['WWTP Inflow','WWTP Inflow','CC RTB Overflow','CC RTB Overflow']
+        axarr[0,1].legend(leg,title = 'Solid = Control, Dashed = No Control', ncol=2)
+        axarr[0,1].set_xlim([0,len(data_control['performanceDict']['1002']['ts_flow'])])
+
+
+        # PLOT 3: ACTIONS AT CONTROL POINTS
+        leg = []
+        t = np.array([i for i in range(0,len(data_control['downstreamDict'][D]['ts_depth']))])
+        if control:
+            for C in keys[0]:
+                axarr[1,0].scatter(t,data_control['controlDict'][C]['actionTS'],s=2)
+                leg = leg + [data_control['controlDict'][C]['location']]
+            axarr[1,0].set_ylabel('Action Setting')
+            axarr[1,0].set_title('Actions at Control Points')
+            axarr[1,0].legend(leg)
+        axarr[0,1].set_xlim([0,len(t)])
+
+
+        # PLOT 4: THE MARKET
+        leg = []
+        for U in keys[1]:
+            axarr[1,1].plot(data_control['upstreamDict'][U]['PD'])
+            leg = leg + [data_control['upstreamDict'][U]['location']]
+    #     axarr[1,1].plot(data_control['price'],color = 'k', linewidth = 3)
+    #     leg = leg + ['Price']
+        axarr[1,1].legend(leg,title = 'Downstream Price, Upstream Wealth')
+        axarr[1,1].set_ylabel('Currency')
+        axarr[1,1].set_title('The Market')
+
+        fig.suptitle('Market Grouping: '+ str(group))
+        fig.tight_layout
+        
+        # if save:
+        #     plt.savefig(figname)
+        
+        plt.show()
+        
+def conner_creek_flow(data_control,data_nocontrol):
+    plt.figure(figsize=(20,15))
+
+    plt.plot(data_control['performanceDict']['ORIFICE22@2909-2999']['ts_flow'])
+    plt.plot(data_nocontrol['performanceDict']['ORIFICE22@2909-2999']['ts_flow'],linestyle='--')
+
+    plt.plot(data_control['performanceDict']['5006']['ts_flow'])
+    plt.plot(data_nocontrol['performanceDict']['5006']['ts_flow'],linestyle='--')
+
+    plt.plot(data_control['performanceDict']['1725']['ts_flow'])
+    plt.plot(data_nocontrol['performanceDict']['1725']['ts_flow'],linestyle='--')
+
+    plt.plot(data_control['performanceDict']['2908']['ts_flow'])
+    plt.plot(data_nocontrol['performanceDict']['2908']['ts_flow'],linestyle='--')
+
+
+    plt.legend(['Or to Dewater','Or to Dewater',
+                'Dewater to 1725','Dewater to 1725',
+                '1725','1725','CC Outfall','CC Outfall'],
+               title = 'Solid = Control, Dashed = No Control',
+               ncol=2)
+    plt.title('Conner Creek Flows')
+    plt.xlabel('Simulation Timestep')
+    plt.ylabel('Flow [cfs]')
+    plt.xlim(0,len(data_control['performanceDict']['2908']['ts_flow']))
+    plt.show()
     
-    
-    
+def price_plot(data_control):
+    plt.scatter([i for i in range(0,len(data_control['price']))],data_control['price'],s=2,color='k')
+    plt.show()
