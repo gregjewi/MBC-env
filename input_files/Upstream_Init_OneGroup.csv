@@ -1,0 +1,6 @@
+name,type,DScp,measure,beta,uparam,location,group,flood_el
+2150,link,ISD006_DOWN,depth,1,1,ISD006,1,500
+2180,link,ISD007_DOWN,depth,1,1,ISD007,1,500
+2190,link,ISD008_DOWN,depth,1,1,ISD008,1,500
+2198,link,ISD009_DOWN,depth,1,1,ISD009,1,500
+2220,link,ISD010_DOWN,depth,1,1,ISD010,1,500

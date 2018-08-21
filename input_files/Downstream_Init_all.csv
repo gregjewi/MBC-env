@@ -1,0 +1,8 @@
+name,type,measure,epsilon,gamma,max_depth,set_point,set_derivative,location,group
+2909,storage,depth,1,0,22,20,0,"2909, CC RTB",1
+1715,link,depth,1,0,9,9,0,"1715, to FV Wet Well",2
+1686,link,depth,1,0,18.02,16,0,"1686, DRI downstream of FV PS",3
+1503,link,depth,1,0,13.45,5,0,ISDs 2-4,4
+20100,link,depth,1,0,14,5,0,ISD005,5
+21450,link,depth,1,0,15.5,5,0,ISDs 6-10,6
+27450,link,depth,1,0,15.5,5,0,ISDs 11-13,7

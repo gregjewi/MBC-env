@@ -1,0 +1,7 @@
+name,type,DScp,measure,uparam,location,group,flood_el
+17311,link,ORIFICE33@17312-17313,depth,10,CC Forebay,1,98
+5220,storage,PUMP44@5220-5219,depth,10,Freud Storm PS,1,84
+5010,storage,PUMP34@5010-5009,depth,10,"CC PS, to RTB",1,95
+5010,storage,PUMP33@5010-5005,depth,10,"CC PS, to DRI",2,95
+2909,storage,PUMP38@2909-5007,depth,10,CC RTB Depth,2,95
+1700,storage,PUMP13@1700-1695,depth,10,FV Wet Well,3,96

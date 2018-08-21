@@ -1,4 +1,18 @@
-name,type,DScp,measure,beta,uparam,location
-2912,link,ORIFICE33@17312-17313,depth,1,1,CC Forebay
-5220,storage,PUMP44@5220-5219,depth,1,1,Freud Storm PS
-5010,storage,PUMP34@5010-5009,depth,1,1,CC Storm PS
+name,type,DScp,measure,beta,uparam,location,group,flood_el
+17311,link,ORIFICE33@17312-17313,depth,1,10,CC Forebay,1,95
+5220,storage,PUMP44@5220-5219,depth,10,10,Freud Storm PS,1,95
+5010,storage,PUMP34@5010-5009,depth,10,10,CC Storm PS,1,95
+1509,link,ISD002_DOWN,depth,10,10,ISD002,2,500
+RC1954,link,ISD003_DOWN,depth,10,10,ISD003,2,500
+1520,link,ISD004_DOWN,depth,10,10,ISD004,2,500
+2020,link,ISD005_DOWN,depth,10,10,ISD005,3,500
+2150,link,ISD006_DOWN,depth,10,10,ISD006,4,500
+2180,link,ISD007_DOWN,depth,10,10,ISD007,4,500
+2190,link,ISD008_DOWN,depth,10,10,ISD008,4,500
+2198,link,ISD009_DOWN,depth,10,10,ISD009,4,500
+2220,link,ISD010_DOWN,depth,10,10,ISD010,4,500
+2750,link,ISD011_DOWN,depth,10,10,ISD011,5,500
+2525,link,ISD012_DOWN,depth,10,10,ISD012,5,500
+2360,link,ISD013_DOWN,depth,10,10,ISD013,5,500
+2909,storage,ORIFICE22@2909-2999,depth,10,10,CC RTB Dewatering,6,95
+1700,storage,PUMP13@1700-1695,depth,10,10,FV to DRI,7,96

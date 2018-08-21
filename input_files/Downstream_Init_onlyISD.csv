@@ -1,0 +1,5 @@
+name,type,measure,epsilon,gamma,max_depth,set_point,set_derivative,location,group
+1503,link,depth,2,0,13.45,0.3,0,"Downstream, ISDs 2-4",1
+20100,link,depth,2,0,14,0.3,0,"Downstream, ISD005",2
+21450,link,depth,2,0,15.5,0.3,0,"Downstream, ISDs 6-10",3
+27450,link,depth,2,0,15.5,0.3,0,"Downstream, ISDs 11-13",4

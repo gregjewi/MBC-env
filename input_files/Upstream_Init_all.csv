@@ -1,0 +1,19 @@
+name,type,DScp,measure,beta,uparam,location,group,flood_el
+17311,link,ORIFICE33@17312-17313,depth,1,1,CC Forebay,1,98
+5220,storage,PUMP44@5220-5219,depth,1,1,Freud Storm PS,1,84
+5010,storage,PUMP34@5010-5009,depth,1,1,"CC PS, to RTB",1,95
+5010,storage,PUMP33@5010-5005,depth,1,1,"CC PS, to DRI",2,95
+2909,storage,ORIFICE22@2909-2999,depth,1,1,CC RTB Dewatering,2,95
+1700,storage,PUMP13@1700-1695,depth,1,1,Fairview PS,3,96
+1509,link,ISD002_DOWN,depth,1,1,ISD002,4,500
+RC1954,link,ISD003_DOWN,depth,1,1,ISD003,4,500
+1520,link,ISD004_DOWN,depth,1,1,ISD004,4,500
+2020,link,ISD005_DOWN,depth,1,1,ISD005,5,500
+2150,link,ISD006_DOWN,depth,1,1,ISD006,6,500
+2180,link,ISD007_DOWN,depth,1,1,ISD007,6,500
+2190,link,ISD008_DOWN,depth,1,1,ISD008,6,500
+2198,link,ISD009_DOWN,depth,1,1,ISD009,6,500
+2220,link,ISD010_DOWN,depth,1,1,ISD010,6,500
+2750,link,ISD011_DOWN,depth,1,1,ISD011,7,500
+2525,link,ISD012_DOWN,depth,1,1,ISD012,7,500
+2360,link,ISD013_DOWN,depth,1,1,ISD013,7,500

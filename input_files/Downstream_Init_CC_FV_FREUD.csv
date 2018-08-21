@@ -1,2 +1,8 @@
-name,type,measure,epsilon,gamma,max_depth,set_point,set_derivative,location
-2909,storage,depth,0,0,1,0.3,0,CC RTB
+name,type,measure,epsilon,gamma,max_depth,set_point,set_derivative,location,group
+2909,storage,depth,10,0,22,5,0,CC RTB,1
+1503,link,depth,10,0,13.45,5,0,ISDs 2-4,2
+20100,link,depth,10,0,14,5,0,ISD005,3
+21450,link,depth,10,0,15.5,5,0,ISDs 6-10,4
+27450,link,depth,10,0,15.5,5,0,ISDs 11-13,5
+1725,storage,depth,10,0,21.82,15,0,RTB Dewatering to FV PS,6
+1686,junction,depth,10,0,18.02,10,0,DRI downstream of FV PS,7

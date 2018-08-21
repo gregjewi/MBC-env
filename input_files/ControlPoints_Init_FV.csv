@@ -1,0 +1,7 @@
+name,type,upst,action,location,group
+ORIFICE33@17312-17313,orifice,17311,1,CC Forebay,1
+PUMP44@5220-5219,pump,5220,1,Freud Storm PS,1
+PUMP34@5010-5009,pump,5010,1,"CC PS, to RTB",1
+PUMP33@5010-5005,pump,5010,1,"CC PS, to DRI",2
+PUMP38@2909-5007,pump,2909,1,CC RTB Dewatering,2
+PUMP13@1700-1695,pump,1700,1,Fairview PS,3

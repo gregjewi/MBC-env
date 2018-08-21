@@ -1,0 +1,8 @@
+C_NAME,C_TYPE,ACTION,U_NAME,U_TYPE,U_PARAM,MEASURE,FLOOD_EL,LOCATION,GROUP
+ORIFICE33@17312-17313,orifice,1,17311,link,0.684,depth,98,17311 -- CC Forebay,1
+PUMP44@5220-5219,pump,1,5220,storage,0.029,depth,84,5220 -- Freud Storm PS,1
+PUMP34@5010-5009,pump,1,5010,storage,0.097,depth,95,5010 -- CC PS to RTB,1
+PUMP33@5010-5005,pump,1,5010,storage,0.65,depth,95,5010 -- CC PS to DRI,2
+PUMP38@2909-5007,pump,1,2909,storage,0.419,depth,95,2909 -- CC RTB Dewatering,2
+VR-02,orifice,1,2912,link,1,depth,98,2912 --CC Forebay Reguator Gates,2
+PUMP13@1700-1695,pump,1,1700,storage,0.459,depth,96,1700 -- Fairview PS,3

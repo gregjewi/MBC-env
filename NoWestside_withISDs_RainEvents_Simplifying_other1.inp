@@ -20,7 +20,7 @@ START_DATE           04/14/2010
 START_TIME           00:00:00
 REPORT_START_DATE    04/14/2010
 REPORT_START_TIME    00:00:00
-END_DATE             04/21/2010
+END_DATE             04/17/2010
 END_TIME             00:00:00
 SWEEP_START          01/01
 SWEEP_END            12/31
@@ -28,7 +28,7 @@ DRY_DAYS             0.000000
 REPORT_STEP          00:15:00
 WET_STEP             00:15:00
 DRY_STEP             00:15:00
-ROUTING_STEP         0:00:30 
+ROUTING_STEP         0:00:15 
 
 INERTIAL_DAMPING     PARTIAL
 NORMAL_FLOW_LIMITED  SLOPE
@@ -36,7 +36,7 @@ FORCE_MAIN_EQUATION  H-W
 VARIABLE_STEP        0.00
 LENGTHENING_STEP     5
 MIN_SURFAREA         12.566000
-MAX_TRIALS           8
+MAX_TRIALS           20
 HEAD_TOLERANCE       0.005
 SYS_FLOW_TOL         5
 LAT_FLOW_TOL         5
@@ -52,60 +52,60 @@ DRY_ONLY         NO
 [RAINGAGES]
 ;;Name           Format    Interval SCF      Source    
 ;;-------------- --------- ------ ------ ----------
-CHS5             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-CTS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-CTS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-CTS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-CTS4             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-CTUMA            CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-FRS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-HRS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-HRS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-MAS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG01             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG02             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG027            CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG028            CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG03             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG04             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG05             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG06             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG07             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG08             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG09             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG10             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG11             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG12             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG13             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG14             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG15             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG16             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG17             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG18             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG19             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG20             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG21             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG22             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG23             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG24             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG25             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG26             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG29             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG30             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG31             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG32             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG33             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-PG34             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-STS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-STS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-STS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-STS4             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-STS5             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-STS6             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-SYS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-SYS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-SYS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
-UTS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20150530_PG002  
+CHS5             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+CTS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+CTS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+CTS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+CTS4             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+CTUMA            CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+FRS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+HRS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+HRS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+MAS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG01             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG02             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG027            CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG028            CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG03             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG04             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG05             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG06             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG07             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG08             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG09             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG10             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG11             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG12             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG13             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG14             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG15             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG16             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG17             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG18             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG19             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG20             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG21             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG22             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG23             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG24             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG25             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG26             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG29             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG30             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG31             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG32             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG33             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+PG34             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+STS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+STS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+STS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+STS4             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+STS5             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+STS6             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+SYS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+SYS2             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+SYS3             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
+UTS1             CUMULATIVE 0.250000 1.000000 TIMESERIES 20170504_PG021  
 
 [SUBCATCHMENTS]
 ;;Name           Rain Gage        Outlet           Area     %Imperv  Width    %Slope   CurbLen  SnowPack        
@@ -3930,6 +3930,7 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 29920            618.750000 7.720000   0.000000   TABULAR    29920                        0.000000 0.000000
 29930            618.150000 7.360000   0.000000   FUNCTIONAL 0.000000  0.000000  100.000000 0.000000 0.000000
 29932            618.750000 6.760000   0.000000   FUNCTIONAL 0.000000  0.000000  100.000000 0.000000 0.000000
+;95471.200000
 2999             533.510000 44.250000  0.000000   FUNCTIONAL 0.000000  0.000000  95471.200000 0.000000 0.000000
 3405             552.510000 29.950000  0.000000   FUNCTIONAL 0.000000  0.000000  200.000000 0.000000 0.000000
 ;SUB3408, Allen Park (7/5/02 Sigma, SSO Model Update)
@@ -4071,7 +4072,7 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 [CONDUITS]
 ;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
 ;;-------------- ---------------- ---------------- ---------- ---------- ---------- ---------- ---------- ----------
-1                21453            21450            400        0.01       0          0          0          0         
+ISD006_damUP     21453            21450            400        0.01       0          0          0          0         
 ;DRI  REGULATORS & OUTFALLS (orig L 900')
 1002             1002             1000             2440.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 ;Regulator Added Flap Gate
@@ -5609,21 +5610,15 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 1720             1720             1715             1136.000000 0.016000   0.000000   0.000000   0.000000   0.000000  
 1725             1725             1720             1940.000000 0.016000   0.000000   0.000000   0.000000   0.000000  
 1730             1730             1725             576.000000 0.016000   0.000000   0.000000   0.000000   0.000000  
-;Regulator Gates from Conner forebay to DRI *C1 1731 1731
-1731             1731             1733             500.000000 0.014000   0.000000   0.000000   0.000000   0.000000  
 ;Conner Creek Forebay-Equiv. Cond
 17311            1731             17312            500.000000 0.014000   0.000000   0.000000   0.000000   0.000000  
 ;*Orifice at Node 17312 to 17313 to represent the 9 roller
 ;gates *Conner Creek Roller Gates and Tailrace-Equiv. Cond.
 17313            17313            2910             1000.000000 0.015000   0.000000   0.000000   0.000000   0.000000  
-;One Regulator Gate  Eq Cond
-1732             1731             1733             500.000000 0.014000   0.000000   0.000000   0.000000   0.000000  
 ;Edited: 6/01 WT tg Equivalent Conduits for Regulator Gates
 ;*Limit Conner Creek at DWI connection -JHH *Upper Limit Conner Creek at DWI
 ;connection -JHH *Limit removed Conner Creek at DWI connection -JHH
 1733             1733             1730             600.000000 0.010000   0.000000   0.000000   0.000000   0.000000  
-;One Regulator Gate  Eq Cond
-1734             1731             1733             500.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 1735             1735             1730             1356       0.016      0          0          0          0         
 ;* x-connection betw. DRI & E.Jeff Relief (east)
 17351            1735             5110             1500.000000 0.011000   9.000000   4.800000   0.000000   0.000000  
@@ -5728,7 +5723,7 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 19200            19200            102510           3191.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 ;*ISS underflow--upper limit set for DWF + dewatering over
 ;24 hours
-19252            1925             19200            500.000000 0.013000   0.000000   0.000000   0.000000   5.200000  
+ISDDR02_underflow 1925             19200            500.000000 0.013000   0.000000   0.000000   0.000000   5.200000  
 1930             1930             1925             1237.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 1935             1935             1930             4232.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 1940             1940             1935             2531.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
@@ -5741,7 +5736,7 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 19452            1945             19401            400.000000 0.013000   0.000000   0.000000   0.000000   2.000000  
 1950             1950             1945             5623.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 19520            19520            1950             246.000000 0.021700   10.870000  0.000000   0.000000   0.000000  
-2                21703            21700            400        0.011      0          0          0          0         
+ISD007_damDOWN   21703            21700            400        0.011      0          0          0          0         
 ;*OUTFLOW COND. FROM WWTP
 20000            20000            20001            575.000000 0.008000   0.000000   0.000000   0.000000   0.000000  
 ;*PS 2 Outfall
@@ -5882,7 +5877,7 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 2190             2190             2185             1078.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 21950            21950            21951            1322.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 ;* In System Storage Dam added (FH3)13
-21951            2195             21950            500.000000 0.013000   12.400000  0.000000   0.000000   0.000000  
+ISD009_underflow 2195             21950            500.000000 0.013000   0.00       0.000000   0.000000   80.0      
 21954            21951            2190             2730.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 2198             2198             2195             1392.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 ;*6 MILE BEG
@@ -6231,7 +6226,7 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 2521             2520             2770             255.000000 0.073000   0.000000   6.000000   0.000000   0.000000  
 2525             2525             25250            4220.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 ;* In System Storage Dam added (SIX2)25
-25251            25250            25251            500.000000 0.013000   8.400000   0.000000   0.000000   0.000000  
+ISD012_underflow 25250            25251            500.000000 0.013000   8.400000   0.000000   0.000000   20.0      
 25253            25251            2520             300.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 2535             2535             2525             4500.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 2545             2545             2535             2254.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
@@ -6334,10 +6329,6 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 ;2735 0 1 0 15.5 0 2800 0 0 0.013 0 0
 2740             2740             2737             1400.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 27450            27450            2740             1190.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
-;* In System Storage Dam added (CME2)1 [changed width from
-;200 to 80  more stable] *9/07 reduce width to reduce instability -- still
-;sufficiently wide at 80 ft
-27451            2745             27450            500.000000 0.013000   12.400000  0.000000   0.000000   0.000000  
 2750             2750             2745             1610.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 2755             2755             2750             1345.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 2760             2760             2755             1800.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
@@ -6462,7 +6453,7 @@ RC92053          1646.360000 40.000000  0.000000   0.000000   0.000000
 29968            29966            29968            805.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
 29970            29968            29970            1248.000000 0.013000   0.000000   0.080000   0.000000   0.000000  
 29972            29970            630              1200.000000 0.013000   0.000000   2.480000   0.000000   0.000000  
-3                21704            21700            400        0.01       0          0          0          0         
+ISD007_damUP     21704            21700            400        0.01       0          0          0          0         
 ;Rouge Valley Interceptor Drop Shaft
 30052            3005             1780             1371.000000 0.017000   0.000000   2.100000   0.000000   0.000000  
 3010             3010             3005             3314.000000 0.013000   0.000000   0.000000   0.000000   0.000000  
@@ -6858,9 +6849,6 @@ ISD008_damUP     21850            21852            400        0.01       0      
 ISD008_underflow 2185             21852            500        0.013      0          0          0          80        
 ISD009_damDOWN   21954            21950            400        0.01       0          0          0          0         
 ISD009_damUP     21953            21950            400        0.011      0          0          0          0         
-;*C1 21952 2195 21950 0 1 0 15.5 0 -500 0 0 0.013 0 92.5
-;*ISS underflow--upper limit set for DWF + dewatering over 24 hours
-ISD009_underflow 2195             21950            500        0.013      0          0          0          81        
 ISD010_damDOWN   22204            22202            217.4      0.01       0          0          0          0         
 ISD010_damUP     22203            22202            400        0.011      0          0          0          0         
 ;ISS underflow--upper limit set for DWF + dewatering over 24
@@ -6872,9 +6860,6 @@ ISD011_damUP     27454            27450            280.6      0.01       0      
 ISD011_underflow 2745             27450            500        0.013      0          0          0          150       
 ISD012_damDOWN   25254            25251            316.81     0.01       0          0          0          0         
 ISD012_damUP     25253            25251            400        0.011      0          0          0          0         
-;*C1 25252 25250 25251 0 1 0 10.5 0 -500 0 0 0.013 0 16.5
-;*ISS underflow--upper limit set for DWF + dewatering over 24 hours
-ISD012_underflow 25250            25251            500        0.013      0          0          0          12        
 ISD013_damDOWN   23554            2351             400        0.01       0          0          0          0         
 ISD013_damUP     23553            2351             400        0.011      0          0          0          0         
 ;ISS underflow--upper limit set for DWF + dewatering over 24
@@ -7548,26 +7533,26 @@ PUMP32@16447-1642 16447            1642             PUMPCURVEFORPUMP32@16447 ON 
 ;VW PON POFF
 PUMP33@5010-5005 5010             5005             PUMPCURVEFORPUMP33@5010 ON       0.000000 0.000000
 ;Conner Creek Pump Station
-PUMP34@5010-5009 5010             5009             PUMPCURVEFORPUMP34@5010 ON       0.000000 0.000000
-PUMP35@5010-5009 5010             5009             PUMPCURVEFORPUMP35@5010 ON       0.000000 0.000000
-PUMP36@5010-5009 5010             5009             PUMPCURVEFORPUMP36@5010 ON       0.000000 0.000000
-PUMP37@5010-5009 5010             5009             PUMPCURVEFORPUMP37@5010 ON       0.000000 0.000000
+PUMP34@5010-5009 5010             5009             CC_STORM_PS      ON       0.000000 0.000000
+PUMP35@5010-5009 5010             5009             DUMMY            OFF      0.000000 0.000000
+PUMP36@5010-5009 5010             5009             DUMMY            OFF      0.000000 0.000000
+PUMP37@5010-5009 5010             5009             DUMMY            OFF      0.000000 0.000000
 ;*Conner Basin Dewatering Pump
-PUMP38@2999-5007 2999             5007             PUMPCURVEFORPUMP38@2999 ON       0.000000 0.000000
+PUMP38@2909-5007 2999             5007             CC_RTB           ON       0.000000 0.000000
 ;*Conner Basin Dewatering Pump
-PUMP39@2999-5007 2999             5007             PUMPCURVEFORPUMP39@2999 ON       0.000000 0.000000
+PUMP39@2999-5007 2999             5007             DUMMY            ON       0.000000 0.000000
 ;*Conner Basin Dewatering Pump
-PUMP40@2999-5007 2999             5007             PUMPCURVEFORPUMP40@2999 ON       0.000000 0.000000
+PUMP40@2999-5007 2999             5007             DUMMY            ON       0.000000 0.000000
 ;*Conner Basin Dewatering Pump
-PUMP41@2999-5007 2999             5007             PUMPCURVEFORPUMP41@2999 ON       0.000000 0.000000
+PUMP41@2999-5007 2999             5007             DUMMY            ON       0.000000 0.000000
 ;*******Edited: 6/01 WT tg Added Basin Dewatering Pumps (2
 ;ft difference was selected arbitrariliy to simulate staggered operation)
 PUMP42@5220-5106 5220             5106             PUMPCURVEFORPUMP42@5220 ON       0.000000 0.000000
 PUMP43@5220-5106 5220             5106             PUMPCURVEFORPUMP43@5220 ON       0.000000 0.000000
-PUMP44@5220-5219 5220             5219             PUMPCURVEFORPUMP44@5220 ON       0.000000 0.000000
-PUMP45@5220-5218 5220             5218             PUMPCURVEFORPUMP45@5220 ON       0.000000 0.000000
-PUMP46@5220-5217 5220             5217             PUMPCURVEFORPUMP46@5220 ON       0.000000 0.000000
-PUMP47@5220-5216 5220             5216             PUMPCURVEFORPUMP47@5220 ON       0.000000 0.000000
+PUMP44@5220-5219 5220             5219             FREUD_STORM_PS   ON       0.000000 0.000000
+PUMP45@5220-5218 5220             5218             DUMMY            OFF      0.000000 0.000000
+PUMP46@5220-5217 5220             5217             DUMMY            OFF      0.000000 0.000000
+PUMP47@5220-5216 5220             5216             DUMMY            OFF      0.000000 0.000000
 ;*********Edited: 6/01 WT tg Updated Static Head Curve Based
 ;On LT CSO Plan-Appendix P *H1 3 5220 5219 200 400 500 68 49 32.0 0. 52.0 26.0
 ;FREUD STORM PUMP *H1 3 5220 5218 400 800 1000 68 49 32.0 0. 52.5 29.0 FREUD
@@ -7644,7 +7629,6 @@ PUMP83@11600-11601 11600            11601            PUMPCURVEFORPUMP83@11600 ON
 ;3 3239 3238 31 31.2 31.5 44 34 17 6.94 7.44 6.94 *Pump 1' *H1 3 3239 3238 31
 ;31.2 31.5 44 34 17 6.94 7.94 7.44 *Pump 2' *H1 3 3239 32
 PUMP9@7046-7045  7046             7045             PUMPCURVEFORPUMP9@7046 ON       0.000000 0.000000
-PUMP38@2909-5007 2909             5007             DUMMY            OFF      0        0       
 
 [ORIFICES]
 ;;Name           From Node        To Node          Type         Offset     Qcoeff     Gated    CloseTime 
@@ -7678,12 +7662,12 @@ ISD012_DOWN      25250            25254            SIDE         0          1    
 ISD012_UP        25250            25253            SIDE         0          1          NO       0         
 ISD013_DOWN      2355             23554            SIDE         0          1          NO       0         
 ;* SEV3 (ISD014)
-ISD013_UP        2355             23553            SIDE         0          1          NO       0.5       
+ISD013_UP        2355             23553            SIDE         0          1.0        NO       0.5       
 ISDDR02_DOWN     1925             19202            SIDE         0          1          NO       0         
 ISDDR02_UP       1925             19201            SIDE         0          1          NO       0         
 ORIFICE19@19401-19400 19401            19400            SIDE         0.000000   1.000000   NO       0.500000  
-;Conner Basin
-ORIFICE22@2909-2999 2909             2999             SIDE         0.000000   1.000000   NO       0.01      
+;Conner Basin, Originally circular orifice or D=1.9549 ft. Changed to square with L,W = 1.732 ft
+ORIFICE22@2909-2999 2909             2999             SIDE         0.000000   1.0        NO       0.0       
 ;Baby Creek VR-7
 ORIFICE26@1791-1789 1791             1789             SIDE         0.000000   1.000000   NO       0.010000  
 ;St. Aubin
@@ -7695,7 +7679,7 @@ ORIFICE29@2701-2702 2701             2702             SIDE         0.000000   0.
 ORIFICE3@7041-70412 7041             70412            SIDE         0.000000   1.000000   NO       0.500000  
 ORIFICE30@1795-1798 1795             1798             SIDE         0.000000   1.000000   NO       0.500000  
 ;Roller Gate representation
-ORIFICE33@17312-17313 17312            17313            SIDE         0.000000   1.000000   NO       0.320000  
+ORIFICE33@17312-17313 17312            17313            SIDE         0.000000   1.0        NO       0.0       
 ;Edited: 6/01 WT tg Added Orifice to Represent Dewatering
 ;system to NWI-Puritan/Fenkell
 ORIFICE34@6167-61671 6167             61671            SIDE         0.000000   0.600000   NO       0.500000  
@@ -8029,6 +8013,8 @@ RC708925A        RC708925A        108925           SIDE         0.000000   0.600
 RC708945A        RC708945A        108945           SIDE         0.000000   0.600000   YES      0         
 RC800515A        RC800515A        200515           SIDE         0.000000   0.600000   YES      0         
 RC800525A        RC800525A        200525           SIDE         0.000000   0.600000   YES      0         
+;Forebay Regulator Gates
+VR-02            1731             1733             SIDE         0          1.0        NO       0         
 
 [WEIRS]
 ;;Name           From Node        To Node          Type         CrestHt    Qcoeff     Gated    EndCon   EndCoeff   Surcharge  RoadWidth  RoadSurf  
@@ -8044,7 +8030,7 @@ WEIR2@6115-6110  6115             6110             TRANSVERSE   4.500000   3.000
 [XSECTIONS]
 ;;Link           Shape        Geom1            Geom2      Geom3      Geom4      Barrels    Culvert   
 ;;-------------- ------------ ---------------- ---------- ---------- ---------- ---------- ----------
-1                FILLED_CIRCULAR 15.5             12.4       0          0          1                    
+ISD006_damUP     FILLED_CIRCULAR 15.5             12.4       0          0          1                    
 1002             CIRCULAR     16.000000        0.000000   0.000000   0.000000   1          0         
 1003             CIRCULAR     1.950000         0.000000   0.000000   0.000000   1          0         
 10030            CIRCULAR     6.500000         0.000000   0.000000   0.000000   1          0         
@@ -9068,12 +9054,9 @@ WEIR2@6115-6110  6115             6110             TRANSVERSE   4.500000   3.000
 1720             CIRCULAR     9.000000         0.000000   0.000000   0.000000   1          0         
 1725             CIRCULAR     9.000000         0.000000   0.000000   0.000000   1          0         
 1730             CIRCULAR     9.000000         0.000000   0.000000   0.000000   1          0         
-1731             CIRCULAR     4.500000         0.000000   0.000000   0.000000   1          0         
 17311            RECT_CLOSED  10.100000        60.900000  0.000000   0.000000   1          0         
 17313            RECT_CLOSED  10.100000        60.900000  0.000000   0.000000   1          0         
-1732             CIRCULAR     4.500000         0.000000   0.000000   0.000000   1          0         
 1733             CIRCULAR     7.000000         0.000000   0.000000   0.000000   1          0         
-1734             CIRCULAR     4.000000         0.000000   0.000000   0.000000   1          0         
 1735             CIRCULAR     9                0          0          0          1          0         
 17351            RECT_CLOSED  4.500000         5.000000   0.000000   0.000000   1          0         
 1740             CIRCULAR     8.500000         0.000000   0.000000   0.000000   1          0         
@@ -9137,7 +9120,7 @@ WEIR2@6115-6110  6115             6110             TRANSVERSE   4.500000   3.000
 1875             CIRCULAR     12.000000        0.000000   0.000000   0.000000   1          0         
 1877             CIRCULAR     12.000000        0.000000   0.000000   0.000000   1          0         
 19200            CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
-19252            CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
+ISDDR02_underflow CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
 1930             CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
 1935             CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
 1940             CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
@@ -9146,7 +9129,7 @@ WEIR2@6115-6110  6115             6110             TRANSVERSE   4.500000   3.000
 19452            CIRCULAR     8.000000         0.000000   0.000000   0.000000   1          0         
 1950             CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
 19520            RECT_CLOSED  3.100000         27.500000  0.000000   0.000000   1          0         
-2                CIRCULAR     15.5             0          0          0          1                    
+ISD007_damDOWN   CIRCULAR     15.5             0          0          0          1                    
 20000            RECT_CLOSED  15.000000        30.000000  0.000000   0.000000   1          0         
 20001            RECT_CLOSED  15.000000        30.000000  0.000000   0.000000   1          0         
 2002             RECT_CLOSED  7.000000         10.500000  0.000000   0.000000   1          0         
@@ -9254,7 +9237,7 @@ WEIR2@6115-6110  6115             6110             TRANSVERSE   4.500000   3.000
 21855            CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
 2190             CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
 21950            CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
-21951            RECT_CLOSED  5.500000         300.000000 0.000000   0.000000   1          0         
+ISD009_underflow RECT_CLOSED  5.500000         300.000000 0.000000   0.000000   1          0         
 21954            CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
 2198             CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
 2200             CIRCULAR     9.000000         0.000000   0.000000   0.000000   1          0         
@@ -9488,7 +9471,7 @@ WEIR2@6115-6110  6115             6110             TRANSVERSE   4.500000   3.000
 2520             CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
 2521             RECT_CLOSED  5.000000         15.710000  0.000000   0.000000   1          0         
 2525             CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
-25251            RECT_CLOSED  10.500000        200.000000 0.000000   0.000000   1          0         
+ISD012_underflow RECT_CLOSED  10.500000        200.000000 0.000000   0.000000   1          0         
 25253            CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
 2535             CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
 2545             CIRCULAR     10.500000        0.000000   0.000000   0.000000   1          0         
@@ -9557,7 +9540,6 @@ WEIR2@6115-6110  6115             6110             TRANSVERSE   4.500000   3.000
 2737             CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
 2740             CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
 27450            CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
-27451            RECT_CLOSED  5.500000         80.000000  0.000000   0.000000   1          0         
 2750             CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
 2755             CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
 2760             CIRCULAR     15.500000        0.000000   0.000000   0.000000   1          0         
@@ -9638,7 +9620,7 @@ WEIR2@6115-6110  6115             6110             TRANSVERSE   4.500000   3.000
 29968            CIRCULAR     4.000000         0.000000   0.000000   0.000000   1          0         
 29970            CIRCULAR     8.500000         0.000000   0.000000   0.000000   1          0         
 29972            CIRCULAR     8.500000         0.000000   0.000000   0.000000   1          0         
-3                FILLED_CIRCULAR 15.5             12.4       0          0          1                    
+ISD007_damUP     FILLED_CIRCULAR 15.5             12.4       0          0          1                    
 30052            CIRCULAR     8.000000         0.000000   0.000000   0.000000   1          0         
 3010             CIRCULAR     8.500000         0.000000   0.000000   0.000000   1          0         
 3025             CIRCULAR     8.500000         0.000000   0.000000   0.000000   1          0         
@@ -9889,7 +9871,6 @@ ISD008_damUP     FILLED_CIRCULAR 15.5             12.4       0          0       
 ISD008_underflow CIRCULAR     15.5             0          0          0          1                    
 ISD009_damDOWN   CIRCULAR     15.5             0          0          0          1                    
 ISD009_damUP     FILLED_CIRCULAR 15.5             12.4       0          0          1          0         
-ISD009_underflow CIRCULAR     15.5             0          0          0          1          0         
 ISD010_damDOWN   CIRCULAR     12.25            0          0          0          1                    
 ISD010_damUP     FILLED_CIRCULAR 12.25            9.8        0          0          1          0         
 ISD010_underflow CIRCULAR     12.25            0          0          0          1          0         
@@ -9898,7 +9879,6 @@ ISD011_damUP     FILLED_CIRCULAR 15.5             12.4       0          0       
 ISD011_underflow RECT_CLOSED  15.5             10         0          150        1          0         
 ISD012_damDOWN   CIRCULAR     10.5             0          0          0          1                    
 ISD012_damUP     FILLED_CIRCULAR 10.5             8.4        0          0          1          0         
-ISD012_underflow CIRCULAR     10.5             0          0          0          1          0         
 ISD013_damDOWN   CIRCULAR     11.5             0          0          0          1                    
 ISD013_damUP     FILLED_CIRCULAR 11.5             9.2        0          0          1          0         
 ISD013_underflow CIRCULAR     11.5             0          0          0          1          0         
@@ -10523,34 +10503,34 @@ RC92052          CIRCULAR     20.000000        0.000000   0.000000   0.000000   
 RC92053          CIRCULAR     20.000000        0.000000   0.000000   0.000000   1          0         
 ISD001_DOWN      CIRCULAR     15               0          0          0
 ISD001_UP        CIRCULAR     15               0          0          0
-ISD002_DOWN      CIRCULAR     14.7             0          0          0
+ISD002_DOWN      RECT_CLOSED  13.0             13.0       0          0
 ISD002_UP        CIRCULAR     14.7             0          0          0
-ISD003_DOWN      CIRCULAR     9                0          0          0
+ISD003_DOWN      RECT_CLOSED  8                8          0          0
 ISD003_UP        CIRCULAR     9                0          0          0
-ISD004_DOWN      CIRCULAR     14               0          0          0
+ISD004_DOWN      RECT_CLOSED  12.4             12.4       0          0
 ISD004_UP        CIRCULAR     14               0          0          0
-ISD005_DOWN      CIRCULAR     13.25            0          0          0
+ISD005_DOWN      RECT_CLOSED  11.75            11.75      0          0
 ISD005_UP        CIRCULAR     13.25            0          0          0
-ISD006_DOWN      CIRCULAR     15.5             0          0          0
+ISD006_DOWN      RECT_CLOSED  13.75            13.75      0          0
 ISD006_UP        CIRCULAR     15.5             0          0          0
-ISD007_DOWN      CIRCULAR     15.5             0          0          0
+ISD007_DOWN      RECT_CLOSED  13.75            13.75      0          0
 ISD007_UP        CIRCULAR     15.5             0          0          0
-ISD008_DOWN      CIRCULAR     15.5             0          0          0
+ISD008_DOWN      RECT_CLOSED  13.75            13.75      0          0
 ISD008_UP        CIRCULAR     15.5             0          0          0
-ISD009_DOWN      CIRCULAR     15.5             0          0          0
+ISD009_DOWN      RECT_CLOSED  12.2             12.2       0          0
 ISD009_UP        CIRCULAR     15.5             0          0          0
-ISD010_DOWN      CIRCULAR     12.25            0          0          0
+ISD010_DOWN      RECT_CLOSED  10.85            10.85      0          0
 ISD010_UP        CIRCULAR     12.25            0          0          0
-ISD011_DOWN      CIRCULAR     15.5             0          0          0
+ISD011_DOWN      RECT_CLOSED  13.75            13.75      0          0
 ISD011_UP        CIRCULAR     15.5             0          0          0
-ISD012_DOWN      CIRCULAR     10.5             0          0          0
+ISD012_DOWN      RECT_CLOSED  9.30             9.30       0          0
 ISD012_UP        CIRCULAR     10.5             0          0          0
-ISD013_DOWN      CIRCULAR     11.5             0          0          0
+ISD013_DOWN      RECT_CLOSED  10.2             10.2       0          0
 ISD013_UP        CIRCULAR     8                0          0          0
 ISDDR02_DOWN     CIRCULAR     10.5             0          0          0
 ISDDR02_UP       CIRCULAR     10.5             0          0          0
 ORIFICE19@19401-19400 CIRCULAR     8.000000         0          0          0
-ORIFICE22@2909-2999 CIRCULAR     1.954900         0          0          0
+ORIFICE22@2909-2999 RECT_CLOSED  1.732            1.732      0          0
 ORIFICE26@1791-1789 CIRCULAR     5.245560         0          0          0
 ORIFICE27@16441-16447 CIRCULAR     0.618200         0          0          0
 ORIFICE28@1667-2703 CIRCULAR     4.514660         0          0          0
@@ -10887,6 +10867,7 @@ RC708925A        CIRCULAR     4.222000         0          0          0
 RC708945A        CIRCULAR     4.222000         0          0          0
 RC800515A        CIRCULAR     4.222000         0          0          0
 RC800525A        CIRCULAR     4.514000         0          0          0
+VR-02            RECT_CLOSED  6.0              8.75       0          0
 PCI12ANO3_WEIR   RECT_OPEN    20.000000        11.000000  0.000000   0.000000  
 PCI67NO5_WEIR    RECT_OPEN    6.170000         15.000000  0.000000   0.000000  
 PCI8NO7_WEIR     RECT_OPEN    5.000000         13.000000  0.000000   0.000000  
@@ -11920,12 +11901,9 @@ WEIR2@6115-6110  RECT_OPEN    8.500000         7.500000   0.000000   0.000000
 1720             0.000000   0.000000   0.000000   NO         0         
 1725             0.000000   0.000000   0.000000   NO         0         
 1730             0.000000   0.000000   0.000000   NO         0         
-1731             0.000000   0.000000   0.000000   NO         0         
 17311            0.000000   0.000000   0.000000   NO         0         
 17313            0.000000   0.000000   0.000000   NO         0         
-1732             0.000000   0.000000   0.000000   NO         0         
 1733             0.000000   0.000000   0.000000   NO         0         
-1734             0.000000   0.000000   0.000000   NO         0         
 17351            0.000000   0.000000   0.000000   NO         0         
 1740             0.000000   0.000000   0.000000   NO         0         
 1745             0.000000   0.000000   0.000000   NO         0         
@@ -11988,7 +11966,7 @@ WEIR2@6115-6110  RECT_OPEN    8.500000         7.500000   0.000000   0.000000
 1875             0.000000   0.000000   0.000000   NO         0         
 1877             0.000000   0.000000   0.000000   NO         0         
 19200            0.000000   0.000000   0.000000   NO         0         
-19252            0.000000   0.000000   0.000000   YES        0         
+ISDDR02_underflow 0.000000   0.000000   0.000000   YES        0         
 1930             0.000000   0.000000   0.000000   NO         0         
 1935             0.000000   0.000000   0.000000   NO         0         
 1940             0.000000   0.000000   0.000000   NO         0         
@@ -12103,7 +12081,7 @@ WEIR2@6115-6110  RECT_OPEN    8.500000         7.500000   0.000000   0.000000
 21855            0.000000   0.000000   0.000000   NO         0         
 2190             0.000000   0.000000   0.000000   NO         0         
 21950            0.000000   0.000000   0.000000   NO         0         
-21951            0.000000   0.000000   0.000000   NO         0         
+ISD009_underflow 0.000000   0.000000   0.000000   NO         0         
 21954            0.000000   0.000000   0.000000   NO         0         
 2198             0.000000   0.000000   0.000000   NO         0         
 2200             0.000000   0.000000   0.000000   NO         0         
@@ -12337,7 +12315,7 @@ WEIR2@6115-6110  RECT_OPEN    8.500000         7.500000   0.000000   0.000000
 2520             0.000000   0.000000   0.000000   NO         0         
 2521             0.000000   0.000000   0.000000   NO         0         
 2525             0.000000   0.000000   0.000000   NO         0         
-25251            0.000000   0.000000   0.000000   NO         0         
+ISD012_underflow 0.000000   0.000000   0.000000   NO         0         
 25253            0.000000   0.000000   0.000000   NO         0         
 2535             0.000000   0.000000   0.000000   NO         0         
 2545             0.000000   0.000000   0.000000   NO         0         
@@ -12406,7 +12384,6 @@ WEIR2@6115-6110  RECT_OPEN    8.500000         7.500000   0.000000   0.000000
 2737             0.000000   0.000000   0.000000   NO         0         
 2740             0.000000   0.000000   0.000000   NO         0         
 27450            0.000000   0.000000   0.000000   NO         0         
-27451            0.000000   0.000000   0.000000   NO         0         
 2750             0.000000   0.000000   0.000000   NO         0         
 2755             0.000000   0.000000   0.000000   NO         0         
 2760             0.000000   0.000000   0.000000   NO         0         
@@ -12722,11 +12699,9 @@ ISD005_underflow 0          0          0          YES        0
 ISD006_underflow 0          0          0          YES        0         
 ISD007_underflow 0          0          0          YES        0         
 ISD008_underflow 0          0          0          YES        0         
-ISD009_underflow 0          0          0          YES        0         
 ISD010_underflow 0          0          0          YES        0         
 ISD011_damDOWN   0          0          0          YES        0         
 ISD011_underflow 0          0          0          YES        0         
-ISD012_underflow 0          0          0          YES        0         
 ISD013_underflow 0          0          0          YES        0         
 RC102051         0.000000   0.000000   0.000000   NO         0         
 RC102052         0.000000   0.000000   0.000000   NO         0         
@@ -13350,33 +13325,19 @@ RC92053          0.000000   0.000000   0.000000   NO         0
 RULE DAMS
 IF SIMULATION TIME >= 00:00:00
 THEN ORIFICE ISD001_UP SETTING = 0.0
-AND ORIFICE ISD001_DOWN SETTING = 1.0
 AND ORIFICE ISD002_UP SETTING = 0.0
-AND ORIFICE ISD002_DOWN SETTING = 1.0
 AND ORIFICE ISD003_UP SETTING = 0.0
-AND ORIFICE ISD003_DOWN SETTING = 1.0
 AND ORIFICE ISD004_UP SETTING = 0.0
-AND ORIFICE ISD004_DOWN SETTING = 1.0
 AND ORIFICE ISD005_UP SETTING = 0.0
-AND ORIFICE ISD005_DOWN SETTING = 1.0
 AND ORIFICE ISD006_UP SETTING = 0.0
-AND ORIFICE ISD006_DOWN SETTING = 1.0
 AND ORIFICE ISD007_UP SETTING = 0.0
-AND ORIFICE ISD007_DOWN SETTING = 1.0
 AND ORIFICE ISD008_UP SETTING = 0.0
-AND ORIFICE ISD008_DOWN SETTING = 1.0
 AND ORIFICE ISD009_UP SETTING = 0.0
-AND ORIFICE ISD009_DOWN SETTING = 1.0
 AND ORIFICE ISD010_UP SETTING = 0.0
-AND ORIFICE ISD010_DOWN SETTING = 1.0
 AND ORIFICE ISD011_UP SETTING = 0.0
-AND ORIFICE ISD011_DOWN SETTING = 1.0
 AND ORIFICE ISD012_UP SETTING = 0.0
-AND ORIFICE ISD012_DOWN SETTING = 1.0
 AND ORIFICE ISD013_UP SETTING = 0.0
-AND ORIFICE ISD013_DOWN SETTING = 1.0
 AND ORIFICE ISDDR02_UP SETTING = 0.0
-AND ORIFICE ISDDR02_DOWN SETTING = 1.0
 PRIORITY 1.0000
 RULE INNOVYZE-INIT-STATUS-0
 IF SIMULATION TIME = 0
@@ -13478,14 +13439,6 @@ RULE ORIFICE19B
 IF NODE 10251 DEPTH <= 9.000000
 THEN ORIFICE ORIFICE19@19401-19400 SETTING = 1.000000
 PRIORITY 2.000000
-RULE ORIFICE22A
-IF NODE 1725 DEPTH > 7.400000
-THEN ORIFICE ORIFICE22@2909-2999 SETTING = 0.000000
-PRIORITY 1.000000
-RULE ORIFICE22B
-IF NODE 1725 DEPTH <= 7.200000
-THEN ORIFICE ORIFICE22@2909-2999 SETTING = 1.000000
-PRIORITY 2.000000
 RULE ORIFICE26A
 IF NODE 1776 DEPTH > 10.200000
 THEN ORIFICE ORIFICE26@1791-1789 SETTING = 0.000000
@@ -13525,14 +13478,6 @@ PRIORITY 1.000000
 RULE ORIFICE30B
 IF NODE 3405 DEPTH <= 8.000000
 THEN ORIFICE ORIFICE30@1795-1798 SETTING = 1.000000
-PRIORITY 2.000000
-RULE ORIFICE33A
-IF NODE 1731 DEPTH >= 17.400000
-THEN ORIFICE ORIFICE33@17312-17313 SETTING = 1.000000
-PRIORITY 1.000000
-RULE ORIFICE33B
-IF NODE 1731 DEPTH < 16.900000
-THEN ORIFICE ORIFICE33@17312-17313 SETTING = 0.000000
 PRIORITY 2.000000
 RULE ORIFICE34A
 IF NODE 6165 DEPTH > 4.500000
@@ -13589,14 +13534,6 @@ PRIORITY 1.000000
 RULE ORIFICE40B
 IF NODE 8010 DEPTH <= 25.000000
 THEN ORIFICE ORIFICE40@8205-8103 SETTING = 1.000000
-PRIORITY 2.000000
-RULE PUMP13A
-IF NODE 1700 DEPTH >= 5.000000
-THEN PUMP PUMP13@1700-1695 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP13B
-IF NODE 1700 DEPTH < 3.000000
-THEN PUMP PUMP13@1700-1695 STATUS = OFF
 PRIORITY 2.000000
 RULE PUMP14A
 IF NODE 1000 DEPTH >= 6.000000
@@ -13677,118 +13614,6 @@ PRIORITY 1.000000
 RULE PUMP25B
 IF NODE 3411 DEPTH < 0.200000
 THEN PUMP PUMP25@3411-3410 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP34A
-IF NODE 5010 DEPTH >= 18.000000
-THEN PUMP PUMP34@5010-5009 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP34B
-IF NODE 5010 DEPTH < 11.000000
-THEN PUMP PUMP34@5010-5009 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP35A
-IF NODE 5010 DEPTH >= 18.500000
-THEN PUMP PUMP35@5010-5009 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP35B
-IF NODE 5010 DEPTH < 12.000000
-THEN PUMP PUMP35@5010-5009 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP36A
-IF NODE 5010 DEPTH >= 19.000000
-THEN PUMP PUMP36@5010-5009 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP36B
-IF NODE 5010 DEPTH < 13.000000
-THEN PUMP PUMP36@5010-5009 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP37A
-IF NODE 5010 DEPTH >= 19.500000
-THEN PUMP PUMP37@5010-5009 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP37B
-IF NODE 5010 DEPTH < 14.000000
-THEN PUMP PUMP37@5010-5009 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP38A
-IF NODE 2999 DEPTH >= 6.250000
-THEN PUMP PUMP38@2999-5007 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP38B
-IF NODE 2999 DEPTH < 3.750000
-THEN PUMP PUMP38@2999-5007 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP39A
-IF NODE 2999 DEPTH >= 8.250000
-THEN PUMP PUMP39@2999-5007 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP39B
-IF NODE 2999 DEPTH < 3.750000
-THEN PUMP PUMP39@2999-5007 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP40A
-IF NODE 2999 DEPTH >= 10.250000
-THEN PUMP PUMP40@2999-5007 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP40B
-IF NODE 2999 DEPTH < 3.750000
-THEN PUMP PUMP40@2999-5007 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP41A
-IF NODE 2999 DEPTH >= 12.250000
-THEN PUMP PUMP41@2999-5007 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP41B
-IF NODE 2999 DEPTH < 3.750000
-THEN PUMP PUMP41@2999-5007 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP42A
-IF NODE 5220 DEPTH >= 11.000000
-THEN PUMP PUMP42@5220-5106 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP42B
-IF NODE 5220 DEPTH < 1.000000
-THEN PUMP PUMP42@5220-5106 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP43A
-IF NODE 5220 DEPTH >= 26.000000
-THEN PUMP PUMP43@5220-5106 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP43B
-IF NODE 5220 DEPTH < 11.000000
-THEN PUMP PUMP43@5220-5106 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP44A
-IF NODE 5220 DEPTH >= 52.000000
-THEN PUMP PUMP44@5220-5219 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP44B
-IF NODE 5220 DEPTH < 26.000000
-THEN PUMP PUMP44@5220-5219 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP45A
-IF NODE 5220 DEPTH >= 52.500000
-THEN PUMP PUMP45@5220-5218 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP45B
-IF NODE 5220 DEPTH < 29.000000
-THEN PUMP PUMP45@5220-5218 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP46A
-IF NODE 5220 DEPTH >= 53.000000
-THEN PUMP PUMP46@5220-5217 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP46B
-IF NODE 5220 DEPTH < 30.000000
-THEN PUMP PUMP46@5220-5217 STATUS = OFF
-PRIORITY 2.000000
-RULE PUMP47A
-IF NODE 5220 DEPTH >= 53.500000
-THEN PUMP PUMP47@5220-5216 STATUS = ON
-PRIORITY 1.000000
-RULE PUMP47B
-IF NODE 5220 DEPTH < 31.000000
-THEN PUMP PUMP47@5220-5216 STATUS = OFF
 PRIORITY 2.000000
 RULE PUMP48A
 IF NODE 5729 DEPTH >= 5.000000
@@ -13934,6 +13759,10 @@ RULE PUMP83B
 IF NODE 11600 DEPTH < 24.000000
 THEN PUMP PUMP83@11600-11601 STATUS = OFF
 PRIORITY 2.000000
+
+
+
+
 
 [INFLOWS]
 ;;Node           Constituent      Time Series      Type     Mfactor  Sfactor  Baseline Pattern
@@ -20837,6 +20666,11 @@ DUMMY            PUMP3      1.000000   0.000000
 DUMMY                       10.00000   0.000000  
 DUMMY                       100.0000   0.000000  
 ;
+CC_DEWATER       Pump3      4          70        
+CC_DEWATER                  11.4       68.16     
+CC_DEWATER                  30         56.16     
+CC_DEWATER                  45         40.12     
+;
 1003             STORAGE    0.000000   871.200000
 1003                        15.700000  2178.000000
 1003                        17.700000  43560.000000
@@ -22854,42 +22688,6 @@ CLINTONDALE                 38.000000  1017.876020
 [TIMESERIES]
 ;;Name           Date       Time       Value     
 ;;-------------- ---------- ---------- ----------
-;half_inch
-half_inch                   0          0         
-half_inch                   0.25       0         
-half_inch                   0.5        0         
-half_inch                   0.75       0         
-half_inch                   1          0.020004  
-half_inch                   1.25       0.040009  
-half_inch                   1.5        0.060013  
-half_inch                   1.75       0.080017  
-half_inch                   2          0.100021  
-half_inch                   2.25       0.120026  
-half_inch                   2.5        0.14003   
-half_inch                   2.75       0.170036  
-half_inch                   3          0.190041  
-half_inch                   3.25       0.210045  
-half_inch                   3.5        0.250054  
-half_inch                   3.75       0.260056  
-half_inch                   4          0.28006   
-half_inch                   4.25       0.290062  
-half_inch                   4.5        0.290062  
-half_inch                   4.75       0.310066  
-half_inch                   5          0.320068  
-half_inch                   5.25       0.340073  
-half_inch                   5.5        0.360077  
-half_inch                   5.75       0.380081  
-half_inch                   6          0.390083  
-half_inch                   6.25       0.400086  
-half_inch                   6.5        0.410088  
-half_inch                   6.75       0.410088  
-half_inch                   7          0.430092  
-half_inch                   7.25       0.430092  
-half_inch                   7.5        0.440094  
-half_inch                   7.75       0.450096  
-half_inch                   8          0.470101  
-half_inch                   8.25       0.500107  
-;
 10YR1HR                     0.75       0.000000  
 10YR1HR                     1          0.800000  
 10YR1HR                     1.25       4.200000  
@@ -27646,6 +27444,42 @@ WARREN_13MILE               39.750000  0.741000
 WARREN_13MILE               39.833333  0.161000  
 WARREN_13MILE               39.916667  0.000000  
 WARREN_13MILE               40         0.000000  
+;
+;half_inch
+half_inch                   0          0         
+half_inch                   0.25       0         
+half_inch                   0.5        0         
+half_inch                   0.75       0         
+half_inch                   1          0.020004  
+half_inch                   1.25       0.040009  
+half_inch                   1.5        0.060013  
+half_inch                   1.75       0.080017  
+half_inch                   2          0.100021  
+half_inch                   2.25       0.120026  
+half_inch                   2.5        0.14003   
+half_inch                   2.75       0.170036  
+half_inch                   3          0.190041  
+half_inch                   3.25       0.210045  
+half_inch                   3.5        0.250054  
+half_inch                   3.75       0.260056  
+half_inch                   4          0.28006   
+half_inch                   4.25       0.290062  
+half_inch                   4.5        0.290062  
+half_inch                   4.75       0.310066  
+half_inch                   5          0.320068  
+half_inch                   5.25       0.340073  
+half_inch                   5.5        0.360077  
+half_inch                   5.75       0.380081  
+half_inch                   6          0.390083  
+half_inch                   6.25       0.400086  
+half_inch                   6.5        0.410088  
+half_inch                   6.75       0.410088  
+half_inch                   7          0.430092  
+half_inch                   7.25       0.430092  
+half_inch                   7.5        0.440094  
+half_inch                   7.75       0.450096  
+half_inch                   8          0.470101  
+half_inch                   8.25       0.500107  
 
 [PATTERNS]
 ;;Name           Type       Multipliers
@@ -31309,8 +31143,6 @@ RC92053          13449906.096       375804.295
 1725             13502796.764       320045.000        
 1725             13502219.464       319922.350        
 1725             13500982.393       319285.840        
-1731             13503252.196       319702.599        
-1732             13503284.110       319784.380        
 1733             13503229.823       320072.941        
 1740             13506449.140       320583.705        
 1760             13508557.064       321818.582        
@@ -32085,8 +31917,8 @@ PUMP35@5010-5009 13503086.587       319906.061
 PUMP35@5010-5009 13503076.323       319664.859        
 PUMP36@5010-5009 13503042.965       319918.891        
 PUMP36@5010-5009 13503030.135       319667.425        
-PUMP38@2999-5007 13504470.173       316613.060        
-PUMP38@2999-5007 13504289.477       316948.637        
+PUMP38@2909-5007 13504470.173       316613.060        
+PUMP38@2909-5007 13504289.477       316948.637        
 PUMP39@2999-5007 13504537.288       316638.873        
 PUMP39@2999-5007 13504361.755       316979.613        
 PUMP40@2999-5007 13504330.779       316514.968        
@@ -32142,6 +31974,7 @@ PCI9NO8_SLUICE2  13487896.845       401401.442
 PCI9NO8_SLUICE2  13488089.552       401611.668        
 PCI9NO8_SLUICE2  13488492.484       401253.784        
 RC1157A          13454714.280       296884.910        
+VR-02            13503280.338       319751.267        
 PCI12ANO3_WEIR   13504369.471       387453.489        
 PCI12ANO3_WEIR   13503681.666       387417.913        
 PCI67NO5_WEIR    13492104.864       373190.256        
